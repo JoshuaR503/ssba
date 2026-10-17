@@ -1,0 +1,8 @@
+# Laptop/cloud dependencies. Do not install these on the robot for basic motion control.
+Flask>=3.1,<4
+requests
+pandas
+numpy
+scikit-learn>=1.5,<2
+joblib>=1.4,<2
+gunicorn>=23

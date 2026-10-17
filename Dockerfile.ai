@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements-ai-lock.txt /app/
+RUN pip install --no-cache-dir -r requirements-ai-lock.txt
+COPY wafer_project /app/wafer_project
+COPY data/ai/secom-v1/model.joblib data/ai/secom-v1/model_metadata.json /app/data/ai/secom-v1/
+ENV AI_ARTIFACT_DIR=/app/data/ai/secom-v1
+ENV AI_REVIEW_DATABASE=/app/reviews/reviews.sqlite3
+EXPOSE 8080
+CMD ["sh", "-c", "exec gunicorn --bind \"0.0.0.0:${PORT:-8080}\" --workers 1 --threads 4 'wafer_project.ai_api:create_cloud_app()'"]

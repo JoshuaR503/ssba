@@ -1,0 +1,12 @@
+.venv
+.venv-robot
+dist
+.git
+.env
+**/__pycache__
+data/datasets
+data/simulations
+data/logs
+data/results
+data/ai/*.sqlite3*
+tests

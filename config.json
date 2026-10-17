@@ -1,0 +1,13 @@
+{
+  "robot_url": "http://127.0.0.1:5000",
+  "hardware_profile": "hardware/pi5_4gb.json",
+  "request_timeout_seconds": 5,
+  "temperature_interval_seconds": 5,
+  "temperature_warning_c": 75,
+  "log_directory": "data/logs",
+  "stations": {
+    "ETCH": true,
+    "DEPOSITION": true,
+    "METROLOGY": true
+  }
+}

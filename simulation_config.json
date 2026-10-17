@@ -1,0 +1,42 @@
+{
+  "provenance": "All values are illustrative simulation assumptions, not measured MasterPi or fab data.",
+  "horizon_seconds": 600,
+  "poll_interval_seconds": 0.5,
+  "temperature_interval_seconds": 5,
+  "temperature_warning_c": 75,
+  "failure_probability": 0.04,
+  "stations": ["ETCH", "DEPOSITION", "METROLOGY"],
+  "workload": {
+    "arrival_gap_seconds": [4, 8],
+    "transfer_seconds": [16, 24],
+    "station_process_seconds": [25, 55],
+    "destination_weights": [0.5, 0.3, 0.2]
+  },
+  "network": {"round_trip_seconds": 0.05, "jitter_seconds": 0.03},
+  "laptop_decision_seconds": 0.005,
+  "pi_profiles": {
+    "pi5": {"ram_gb": 4, "onboard_decision_seconds": 0.01, "command_handling_seconds": 0.002}
+  },
+  "thermal": {
+    "ambient_c": 25,
+    "idle_rise_c": 17,
+    "load_rise_c": 30,
+    "time_constant_seconds": 90,
+    "initial_c": 42,
+    "idle_load": 0.08,
+    "onboard_active_load": 0.45,
+    "external_active_load": 0.25
+  },
+  "scenarios": {
+    "normal": {"station_outages": [], "network_outages": []},
+    "station_outage": {
+      "station_outages": [{"station": "ETCH", "start": 60, "end": 240}],
+      "network_outages": []
+    },
+    "network_outage": {
+      "station_outages": [],
+      "network_outages": [{"start": 120, "end": 240}]
+    },
+    "warm_cpu": {"station_outages": [], "network_outages": [], "initial_temperature_c": 78}
+  }
+}

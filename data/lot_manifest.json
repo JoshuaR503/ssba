@@ -1,0 +1,20 @@
+{
+  "mapping_is_demonstration_only": true,
+  "record_source": "kaggle_secom_dataset_replay",
+  "dataset_csv": "datasets/secom/uci-secom.csv",
+  "dataset_sha256": "e8b8187ce276db148707b5103463aa0f35cb8e521da2bc697c0fd45a6b06ad0f",
+  "lots": {
+    "W001": {
+      "record_id": "SECOM_1086",
+      "normal_destination": "ETCH"
+    },
+    "W002": {
+      "record_id": "SECOM_1087",
+      "normal_destination": "DEPOSITION"
+    },
+    "W003": {
+      "record_id": "SECOM_1088",
+      "normal_destination": "ETCH"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+[
+  {"lot_id": "W001", "destination": "ETCH"},
+  {"lot_id": "W002", "destination": "DEPOSITION"},
+  {"lot_id": "W003", "destination": "METROLOGY"}
+]

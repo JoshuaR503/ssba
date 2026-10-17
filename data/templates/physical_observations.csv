@@ -1,0 +1,1 @@
+trial_id,controller_condition,lot_id,destination,physical_success,pickup_failed,dropped_in_transit,placement_failed,observed_transfer_seconds,cpu_temperature_start_c,cpu_temperature_end_c,operator,notes

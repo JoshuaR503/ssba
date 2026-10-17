@@ -1,0 +1,15 @@
+{
+  "profile_id": "masterpi_pi5_4gb",
+  "expected_model": "Raspberry Pi 5",
+  "ram_gb": 4,
+  "motion_enabled": false,
+  "sdk_root": "/home/pi/MasterPi",
+  "calibration_file": "calibration.json",
+  "limits": {
+    "max_drive_speed_mm_s": 40,
+    "max_step_seconds": 3,
+    "max_transfer_seconds": 90,
+    "servo_pulse_min": 500,
+    "servo_pulse_max": 2500
+  }
+}

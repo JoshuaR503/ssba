@@ -1,0 +1,25 @@
+{
+  "calibrated": false,
+  "calibration_id": null,
+  "notes": "Replace nulls using supervised measurements on this robot. Add separate gripper/lift/transport frames as needed. No default positions or movement timings are assumed.",
+  "pickup": [
+    {"kind": "servo", "name": "calibrated_pickup_frames", "duration_s": null, "positions": null}
+  ],
+  "routes": {
+    "ETCH": {
+      "outbound": [{"kind": "drive", "name": "pickup_to_etch", "duration_s": null, "speed_mm_s": null, "direction_deg": null}],
+      "place": [{"kind": "servo", "name": "place_at_etch", "duration_s": null, "positions": null}],
+      "return": [{"kind": "drive", "name": "etch_to_pickup", "duration_s": null, "speed_mm_s": null, "direction_deg": null}]
+    },
+    "DEPOSITION": {
+      "outbound": [{"kind": "drive", "name": "pickup_to_deposition", "duration_s": null, "speed_mm_s": null, "direction_deg": null}],
+      "place": [{"kind": "servo", "name": "place_at_deposition", "duration_s": null, "positions": null}],
+      "return": [{"kind": "drive", "name": "deposition_to_pickup", "duration_s": null, "speed_mm_s": null, "direction_deg": null}]
+    },
+    "METROLOGY": {
+      "outbound": [{"kind": "drive", "name": "pickup_to_metrology", "duration_s": null, "speed_mm_s": null, "direction_deg": null}],
+      "place": [{"kind": "servo", "name": "place_at_metrology", "duration_s": null, "positions": null}],
+      "return": [{"kind": "drive", "name": "metrology_to_pickup", "duration_s": null, "speed_mm_s": null, "direction_deg": null}]
+    }
+  }
+}

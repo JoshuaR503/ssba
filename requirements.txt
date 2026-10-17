@@ -1,0 +1,6 @@
+pandas
+matplotlib
+requests
+simpy>=4.1,<5
+-r requirements-ai.txt
+-r requirements-robot.txt

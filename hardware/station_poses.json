@@ -1,0 +1,207 @@
+{
+  "pose_set": "station-photos-v6",
+  "description": "Latest deposition/metrology/etch records. ID4 omitted, ID3 >=30. Derived transitions require physical verification.",
+  "excluded_joint_ids": [
+    4
+  ],
+  "wheels_enabled": false,
+  "duration_ms": 500,
+  "lift_trim": {
+    "joint_id": 5,
+    "command_delta": 0.5,
+    "units": "app command units, not mm or percent",
+    "apply_to": "approach, raised, empty-arm retract; contact poses unchanged"
+  },
+  "stations": {
+    "deposition": {
+      "color": "green",
+      "start": {
+        "1": 4,
+        "3": 60,
+        "5": -6,
+        "6": -4
+      },
+      "approach": {
+        "3": 74,
+        "5": -56,
+        "6": -4
+      },
+      "pickup": {
+        "3": 74,
+        "5": -56,
+        "6": -4
+      },
+      "raised": {
+        "3": 74,
+        "5": -34,
+        "6": -4
+      },
+      "destination": {
+        "3": 90,
+        "5": -54,
+        "6": 90
+      },
+      "open": -30,
+      "grip": -2,
+      "release": -24,
+      "record": "docs/poses/deposition/manifest.json",
+      "recorded_id4": 20
+    },
+    "metrology": {
+      "color": "blue/cyan",
+      "start": {
+        "1": 4,
+        "3": 48,
+        "5": 4,
+        "6": 0
+      },
+      "approach": {
+        "3": 70,
+        "5": -48,
+        "6": -46
+      },
+      "pickup": {
+        "3": 70,
+        "5": -60,
+        "6": -46
+      },
+      "raised": {
+        "3": 70,
+        "5": -32,
+        "6": -46
+      },
+      "destination": {
+        "3": 90,
+        "5": -70,
+        "6": 90
+      },
+      "open": -40,
+      "grip": -2,
+      "release": -36,
+      "record": "docs/poses/metrology/manifest.json",
+      "recorded_id4": 4,
+      "derived": [
+        "Start uses latest etch start; no metrology start controls supplied.",
+        "Pre-turn lift uses ID3=70/ID5=-32 from IMG_1015, retaining pickup base=-46. This intermediate pose is inferred, not separately taught."
+      ]
+    },
+    "etch": {
+      "color": "red",
+      "start": {
+        "1": 4,
+        "3": 48,
+        "5": 4,
+        "6": 0
+      },
+      "approach": {
+        "3": 76,
+        "5": -50,
+        "6": 32
+      },
+      "pickup": {
+        "3": 80,
+        "5": -60,
+        "6": 32
+      },
+      "raised": {
+        "3": 80,
+        "5": -30,
+        "6": 32
+      },
+      "destination": {
+        "3": 90,
+        "5": -58,
+        "6": 90
+      },
+      "open": -42,
+      "grip": 6,
+      "release": -44,
+      "record": "docs/poses/etch/manifest.json",
+      "recorded_id4": 0
+    }
+  },
+  "historical_pose_set": {
+    "description": "Phone-taught arm station poses; IDs 1,3,5,6 only. Physical transitions require testing. No station detection or autonomous execution implied.",
+    "excluded_joint_ids": [
+      4
+    ],
+    "wheels_enabled": false,
+    "stations": {
+      "red_deposition": {
+        "color": "red",
+        "station": "deposition",
+        "grip": 6,
+        "open": -24,
+        "pickup": {
+          "3": 44,
+          "5": -82,
+          "6": 0
+        },
+        "raised": {
+          "3": 44,
+          "5": -56,
+          "6": 2
+        },
+        "source": [
+          "IMG_0955.HEIC",
+          "IMG_0956.HEIC"
+        ]
+      },
+      "cube_minus32": {
+        "color": null,
+        "station": null,
+        "grip": 6,
+        "open": null,
+        "pickup": {
+          "3": 54,
+          "5": -74,
+          "6": -32
+        },
+        "raised": {
+          "3": 54,
+          "5": -42,
+          "6": -32
+        },
+        "source": [
+          "IMG_0965.HEIC",
+          "IMG_0966.HEIC"
+        ],
+        "note": "Pickup/raised assignment inferred from filename sequence and shoulder change; confirmation pending. Open setting not recorded."
+      },
+      "cube_plus32": {
+        "color": null,
+        "station": null,
+        "grip": 4,
+        "open": -44,
+        "approach": {
+          "3": 54,
+          "5": -42,
+          "6": 30
+        },
+        "pickup": {
+          "3": 52,
+          "5": -82,
+          "6": 32
+        },
+        "raised": {
+          "3": 52,
+          "5": -50,
+          "6": 32
+        },
+        "source": [
+          "IMG_0967.HEIC",
+          "IMG_0968.HEIC",
+          "IMG_0969.HEIC"
+        ],
+        "note": "Approach/pickup/raised stage assignment inferred from recorded settings and user description. ID4 display changes omitted; unchanged physical ID4 position not verified."
+      }
+    },
+    "lift_trim": {
+      "joint_id": 5,
+      "command_delta": 0.5,
+      "units": "app command units; not mm or percent",
+      "physically_verified": false,
+      "apply_to": "raised pose only; preserve recorded values"
+    }
+  }
+}

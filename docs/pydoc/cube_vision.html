@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module cube_vision</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">cube_vision</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/scripts/cube_vision.py">/Users/joshua/Desktop/ai-based wafer/scripts/cube_vision.py</a></td></tr></table>
+    <p><span class="code">Local&nbsp;OpenCV&nbsp;station&nbsp;selector.&nbsp;No&nbsp;motion&nbsp;commands&nbsp;or&nbsp;external&nbsp;AI&nbsp;calls.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-choose_stable"><strong>choose_stable</strong></a>(samples)</dt><dd><span class="code">Choose&nbsp;the&nbsp;nearest&nbsp;calibrated&nbsp;station&nbsp;visible&nbsp;in&nbsp;at&nbsp;least&nbsp;three&nbsp;stable&nbsp;samples.<br>
+&nbsp;<br>
+Require&nbsp;each&nbsp;candidate&nbsp;in&nbsp;every&nbsp;sample&nbsp;and&nbsp;at&nbsp;most&nbsp;eight&nbsp;pixels&nbsp;displacement<br>
+from&nbsp;the&nbsp;final&nbsp;center.&nbsp;Break&nbsp;distance&nbsp;ties&nbsp;by&nbsp;station&nbsp;name;&nbsp;return&nbsp;None&nbsp;if&nbsp;absent.</span></dd></dl>
+ <dl><dt><a name="-configure"><strong>configure</strong></a>(host, path, distances=None, *, observation_pose, pose_set, stations)</dt><dd><span class="code">Calibrate&nbsp;three&nbsp;station&nbsp;ROIs&nbsp;at&nbsp;an&nbsp;already&nbsp;established&nbsp;observation&nbsp;pose.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;host:&nbsp;Robot&nbsp;camera&nbsp;hostname&nbsp;or&nbsp;IP&nbsp;address.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;Destination&nbsp;JSON&nbsp;calibration&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;distances:&nbsp;Optional&nbsp;positive&nbsp;centimeter&nbsp;distances&nbsp;in&nbsp;station&nbsp;order;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise&nbsp;prompt&nbsp;after&nbsp;each&nbsp;ROI&nbsp;selection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;observation_pose:&nbsp;Actual&nbsp;operator-established&nbsp;arm&nbsp;pose&nbsp;to&nbsp;record.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pose_set:&nbsp;Version&nbsp;identifying&nbsp;the&nbsp;active&nbsp;taught-pose&nbsp;configuration.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stations:&nbsp;Three&nbsp;canonical&nbsp;station&nbsp;names&nbsp;in&nbsp;calibration&nbsp;order.<br>
+&nbsp;<br>
+Requires&nbsp;a&nbsp;graphical&nbsp;OpenCV&nbsp;session.&nbsp;Captures&nbsp;one&nbsp;image,&nbsp;asks&nbsp;for&nbsp;tight&nbsp;ROIs,<br>
+estimates&nbsp;center&nbsp;LAB&nbsp;colors,&nbsp;and&nbsp;saves&nbsp;only&nbsp;after&nbsp;all&nbsp;selections&nbsp;complete.<br>
+Existing&nbsp;configuration&nbsp;survives&nbsp;cancellation.&nbsp;Always&nbsp;closes&nbsp;image&nbsp;windows.<br>
+No&nbsp;pose&nbsp;is&nbsp;commanded&nbsp;or&nbsp;independently&nbsp;verified&nbsp;by&nbsp;this&nbsp;function.</span></dd></dl>
+ <dl><dt><a name="-detect"><strong>detect</strong></a>(frame, data)</dt><dd><span class="code">Return&nbsp;eligible&nbsp;in-zone&nbsp;color&nbsp;detections;&nbsp;reject&nbsp;changed&nbsp;image&nbsp;size&nbsp;or&nbsp;invalid&nbsp;zones.<br>
+&nbsp;<br>
+Uses&nbsp;LAB&nbsp;thresholds,&nbsp;morphological&nbsp;cleanup,&nbsp;contour&nbsp;area&nbsp;and&nbsp;center&nbsp;tolerance.<br>
+Distances&nbsp;are&nbsp;calibration&nbsp;metadata,&nbsp;not&nbsp;live&nbsp;depth&nbsp;or&nbsp;ultrasonic&nbsp;readings.</span></dd></dl>
+ <dl><dt><a name="-libraries"><strong>libraries</strong></a>()</dt><dd><span class="code">Lazily&nbsp;import&nbsp;OpenCV&nbsp;and&nbsp;NumPy;&nbsp;raise&nbsp;RuntimeError&nbsp;with&nbsp;install&nbsp;guidance.</span></dd></dl>
+ <dl><dt><a name="-read_distance"><strong>read_distance</strong></a>(name)</dt><dd><span class="code">Prompt&nbsp;until&nbsp;a&nbsp;positive&nbsp;finite&nbsp;station&nbsp;distance&nbsp;in&nbsp;centimeters&nbsp;is&nbsp;entered.</span></dd></dl>
+ <dl><dt><a name="-select"><strong>select</strong></a>(host, path, *, pose_set, observation_pose, stations)</dt><dd><span class="code">Validate&nbsp;calibration,&nbsp;sample&nbsp;three&nbsp;images,&nbsp;lock&nbsp;one&nbsp;station&nbsp;and&nbsp;save&nbsp;an&nbsp;overlay.<br>
+&nbsp;<br>
+Reject&nbsp;old&nbsp;pose&nbsp;sets&nbsp;or&nbsp;observation&nbsp;poses&nbsp;before&nbsp;reading&nbsp;the&nbsp;camera.&nbsp;Return<br>
+the&nbsp;selected&nbsp;detection&nbsp;dictionary&nbsp;or&nbsp;raise&nbsp;on&nbsp;invalid/unstable&nbsp;input.&nbsp;Writes<br>
+vision_selection.jpg&nbsp;beside&nbsp;the&nbsp;configuration;&nbsp;sends&nbsp;no&nbsp;movement&nbsp;commands.</span></dd></dl>
+ <dl><dt><a name="-snapshot"><strong>snapshot</strong></a>(host)</dt><dd><span class="code">Read&nbsp;and&nbsp;decode&nbsp;one&nbsp;camera&nbsp;snapshot&nbsp;on&nbsp;port&nbsp;8080,&nbsp;capped&nbsp;at&nbsp;8&nbsp;MB.&nbsp;Sends&nbsp;no&nbsp;motion.</span></dd></dl>
+</td></tr></table>
+</body></html>

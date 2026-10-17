@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module test_pickup_without_id4</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">test_pickup_without_id4</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/scripts/test_pickup_without_id4.py">/Users/joshua/Desktop/ai-based wafer/scripts/test_pickup_without_id4.py</a></td></tr></table>
+    <p><span class="code">Run&nbsp;the&nbsp;photo-taught&nbsp;MasterPi&nbsp;three-station&nbsp;transfer&nbsp;prototype.<br>
+&nbsp;<br>
+Run&nbsp;from&nbsp;the&nbsp;Mac&nbsp;project&nbsp;directory.&nbsp;With&nbsp;no&nbsp;arguments,&nbsp;print&nbsp;the&nbsp;complete&nbsp;plan<br>
+without&nbsp;sending&nbsp;movement&nbsp;commands.&nbsp;``--execute``&nbsp;transfers&nbsp;green/deposition,<br>
+blue/metrology,&nbsp;then&nbsp;red/etch&nbsp;into&nbsp;the&nbsp;tray&nbsp;and&nbsp;returns&nbsp;the&nbsp;empty&nbsp;arm&nbsp;after&nbsp;each<br>
+transfer.&nbsp;``--cube``&nbsp;selects&nbsp;one&nbsp;station;&nbsp;``--step``&nbsp;enables&nbsp;optional&nbsp;prompts.<br>
+&nbsp;<br>
+Every&nbsp;movement&nbsp;requests&nbsp;500&nbsp;ms,&nbsp;followed&nbsp;by&nbsp;150&nbsp;ms&nbsp;settling.&nbsp;A&nbsp;five-second<br>
+countdown&nbsp;precedes&nbsp;automatic&nbsp;execution.&nbsp;Targets&nbsp;come&nbsp;from&nbsp;the&nbsp;version-matched<br>
+``hardware/station_poses.json``&nbsp;file&nbsp;relative&nbsp;to&nbsp;this&nbsp;script,&nbsp;not&nbsp;the&nbsp;shell&nbsp;cwd.<br>
+ID5&nbsp;receives&nbsp;+0.5&nbsp;command&nbsp;units&nbsp;on&nbsp;approach,&nbsp;lift,&nbsp;and&nbsp;empty-arm&nbsp;retract&nbsp;only.<br>
+&nbsp;<br>
+Only&nbsp;servo&nbsp;IDs&nbsp;1&nbsp;(gripper),&nbsp;3&nbsp;(wrist&nbsp;pitch),&nbsp;5&nbsp;(shoulder),&nbsp;and&nbsp;6&nbsp;(arm&nbsp;base)&nbsp;may<br>
+be&nbsp;commanded.&nbsp;ID3&nbsp;must&nbsp;remain&nbsp;&gt;=30.&nbsp;ID4&nbsp;and&nbsp;wheel&nbsp;commands&nbsp;are&nbsp;excluded;&nbsp;omission<br>
+does&nbsp;not&nbsp;electrically&nbsp;disable&nbsp;or&nbsp;mechanically&nbsp;stabilize&nbsp;the&nbsp;damaged&nbsp;ID4&nbsp;joint.<br>
+&nbsp;<br>
+Optional&nbsp;vision&nbsp;selects&nbsp;one&nbsp;known&nbsp;station&nbsp;from&nbsp;manually&nbsp;calibrated&nbsp;camera&nbsp;zones;<br>
+it&nbsp;is&nbsp;taught-pose&nbsp;playback,&nbsp;not&nbsp;arbitrary-position&nbsp;visual&nbsp;servoing&nbsp;or&nbsp;an&nbsp;AI&nbsp;API.<br>
+That&nbsp;mode&nbsp;lazily&nbsp;imports&nbsp;``cube_vision``&nbsp;and&nbsp;requires&nbsp;OpenCV/NumPy.&nbsp;Normal<br>
+preview&nbsp;and&nbsp;execution&nbsp;use&nbsp;only&nbsp;the&nbsp;Python&nbsp;standard&nbsp;library.<br>
+&nbsp;<br>
+The&nbsp;user&nbsp;reported&nbsp;the&nbsp;three-station&nbsp;run&nbsp;worked&nbsp;on&nbsp;2026-10-17.&nbsp;This&nbsp;is&nbsp;a&nbsp;tested<br>
+prototype&nbsp;baseline,&nbsp;not&nbsp;a&nbsp;measured&nbsp;accuracy,&nbsp;repeatability,&nbsp;or&nbsp;program-requirement<br>
+certification.&nbsp;Source&nbsp;poses&nbsp;contain&nbsp;differing&nbsp;displayed&nbsp;ID4&nbsp;values;&nbsp;the&nbsp;metrology<br>
+pre-turn&nbsp;lift&nbsp;and&nbsp;empty-arm&nbsp;returns&nbsp;were&nbsp;derived.&nbsp;API&nbsp;acceptance&nbsp;does&nbsp;not&nbsp;prove<br>
+a&nbsp;grasp&nbsp;or&nbsp;release.&nbsp;There&nbsp;is&nbsp;no&nbsp;joint&nbsp;feedback&nbsp;or&nbsp;automatic&nbsp;grasp&nbsp;verification.<br>
+&nbsp;<br>
+Network&nbsp;commands&nbsp;use&nbsp;HTTP&nbsp;JSON-RPC&nbsp;``SetPWMServo``&nbsp;on&nbsp;port&nbsp;9030.&nbsp;Rejections&nbsp;and<br>
+connection&nbsp;failures&nbsp;stop&nbsp;future&nbsp;commands&nbsp;without&nbsp;retries&nbsp;or&nbsp;recovery&nbsp;movements.<br>
+Ctrl+C&nbsp;stops&nbsp;dispatch,&nbsp;but&nbsp;a&nbsp;previously&nbsp;sent&nbsp;command&nbsp;may&nbsp;finish.&nbsp;Never&nbsp;enable<br>
+competing&nbsp;phone/vendor&nbsp;behaviors&nbsp;during&nbsp;a&nbsp;transfer.<br>
+&nbsp;<br>
+Examples::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python3&nbsp;scripts/test_pickup_without_id4.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python3&nbsp;scripts/test_pickup_without_id4.py&nbsp;--execute<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python3&nbsp;scripts/test_pickup_without_id4.py&nbsp;--cube&nbsp;etch&nbsp;--execute<br>
+&nbsp;<br>
+See&nbsp;``docs/working_pickup.md``&nbsp;for&nbsp;setup,&nbsp;pose&nbsp;tables,&nbsp;CLI&nbsp;options,&nbsp;and&nbsp;tests.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+<a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="math.html">math</a><br>
+<a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+<a href="time.html">time</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-build_steps"><strong>build_steps</strong></a>(selection='all')</dt><dd><span class="code">Build&nbsp;and&nbsp;validate&nbsp;the&nbsp;ordered&nbsp;movement&nbsp;plan&nbsp;without&nbsp;network&nbsp;access.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selection:&nbsp;``all``,&nbsp;``deposition``,&nbsp;``metrology``,&nbsp;or&nbsp;``etch``.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List&nbsp;of&nbsp;(human-readable&nbsp;label,&nbsp;joint-target&nbsp;dictionary)&nbsp;tuples:&nbsp;eleven<br>
+&nbsp;&nbsp;&nbsp;&nbsp;per&nbsp;station,&nbsp;thirty-three&nbsp;for&nbsp;all&nbsp;stations.&nbsp;Unspecified&nbsp;joints&nbsp;retain<br>
+&nbsp;&nbsp;&nbsp;&nbsp;their&nbsp;previous&nbsp;target;&nbsp;ID4&nbsp;is&nbsp;never&nbsp;inserted.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Unknown&nbsp;station&nbsp;or&nbsp;any&nbsp;invalid&nbsp;target&nbsp;anywhere&nbsp;in&nbsp;the&nbsp;plan.<br>
+&nbsp;<br>
+Source/contact&nbsp;poses&nbsp;are&nbsp;copied.&nbsp;Clearance&nbsp;trim&nbsp;applies&nbsp;only&nbsp;to&nbsp;approach,<br>
+lift&nbsp;and&nbsp;retract.&nbsp;Each&nbsp;cycle&nbsp;releases&nbsp;before&nbsp;retracting,&nbsp;turns&nbsp;the&nbsp;empty&nbsp;arm<br>
+back,&nbsp;and&nbsp;returns&nbsp;to&nbsp;its&nbsp;start.&nbsp;Metrology's&nbsp;pre-turn&nbsp;lift&nbsp;is&nbsp;explicitly<br>
+derived&nbsp;from&nbsp;its&nbsp;later&nbsp;raised&nbsp;turn&nbsp;pose,&nbsp;retaining&nbsp;the&nbsp;pickup&nbsp;base&nbsp;angle.</span></dd></dl>
+ <dl><dt><a name="-color"><strong>color</strong></a>(text, code)</dt><dd><span class="code">Return&nbsp;ANSI-colored&nbsp;terminal&nbsp;text,&nbsp;respecting&nbsp;``NO_COLOR``.<br>
+&nbsp;<br>
+Redirected&nbsp;output&nbsp;remains&nbsp;plain&nbsp;text;&nbsp;``code``&nbsp;is&nbsp;an&nbsp;ANSI&nbsp;SGR&nbsp;parameter.</span></dd></dl>
+ <dl><dt><a name="-duration_for"><strong>duration_for</strong></a>(label)</dt><dd><span class="code">Return&nbsp;the&nbsp;fixed&nbsp;500&nbsp;ms&nbsp;duration&nbsp;for&nbsp;every&nbsp;movement&nbsp;label.<br>
+&nbsp;<br>
+``label``&nbsp;is&nbsp;retained&nbsp;for&nbsp;the&nbsp;existing&nbsp;plan/printing&nbsp;interface;&nbsp;it&nbsp;does&nbsp;not<br>
+select&nbsp;a&nbsp;different&nbsp;speed.&nbsp;Settling&nbsp;time&nbsp;is&nbsp;applied&nbsp;separately&nbsp;by&nbsp;``main``.</span></dd></dl>
+ <dl><dt><a name="-joint_pose"><strong>joint_pose</strong></a>(raw)</dt><dd><span class="code">Convert&nbsp;a&nbsp;JSON&nbsp;joint-target&nbsp;mapping&nbsp;to&nbsp;integer&nbsp;servo&nbsp;IDs.<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;new&nbsp;dictionary&nbsp;so&nbsp;trimming&nbsp;a&nbsp;planned&nbsp;pose&nbsp;does&nbsp;not&nbsp;mutate&nbsp;the<br>
+reference&nbsp;configuration.&nbsp;Target&nbsp;validation&nbsp;is&nbsp;performed&nbsp;by&nbsp;``payload``.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Parse&nbsp;CLI&nbsp;options,&nbsp;preview&nbsp;the&nbsp;plan,&nbsp;and&nbsp;optionally&nbsp;dispatch&nbsp;it&nbsp;once.<br>
+&nbsp;<br>
+Return&nbsp;0&nbsp;on&nbsp;preview/completion/user&nbsp;step&nbsp;cancellation&nbsp;and&nbsp;1&nbsp;on&nbsp;caught<br>
+execution&nbsp;or&nbsp;vision&nbsp;errors/interruption.&nbsp;Argparse&nbsp;handles&nbsp;usage&nbsp;errors.<br>
+The&nbsp;entire&nbsp;plan&nbsp;is&nbsp;validated&nbsp;before&nbsp;the&nbsp;first&nbsp;request.&nbsp;Automatic&nbsp;mode&nbsp;has<br>
+one&nbsp;countdown,&nbsp;not&nbsp;per-step&nbsp;confirmations.&nbsp;Requests&nbsp;are&nbsp;sequential;&nbsp;each<br>
+accepted&nbsp;request&nbsp;is&nbsp;followed&nbsp;by&nbsp;its&nbsp;duration&nbsp;plus&nbsp;a&nbsp;settling&nbsp;interval.<br>
+&nbsp;<br>
+Optional&nbsp;vision&nbsp;reads&nbsp;snapshots&nbsp;even&nbsp;in&nbsp;preview&nbsp;and&nbsp;rechecks&nbsp;the&nbsp;locked<br>
+target&nbsp;after&nbsp;the&nbsp;countdown&nbsp;before&nbsp;movement.&nbsp;No&nbsp;automatic&nbsp;retry,&nbsp;release,<br>
+or&nbsp;return&nbsp;is&nbsp;sent&nbsp;after&nbsp;an&nbsp;execution&nbsp;error.</span></dd></dl>
+ <dl><dt><a name="-payload"><strong>payload</strong></a>(joints, request_id, duration_ms=500)</dt><dd><span class="code">Validate&nbsp;targets&nbsp;and&nbsp;construct&nbsp;one&nbsp;vendor&nbsp;JSON-RPC&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joints:&nbsp;Nonempty&nbsp;mapping&nbsp;of&nbsp;allowed&nbsp;integer&nbsp;servo&nbsp;IDs&nbsp;to&nbsp;app&nbsp;command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values&nbsp;in&nbsp;[-90,&nbsp;90];&nbsp;ID3&nbsp;additionally&nbsp;requires&nbsp;a&nbsp;value&nbsp;&gt;=30.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;request_id:&nbsp;Request&nbsp;identifier&nbsp;echoed&nbsp;by&nbsp;the&nbsp;JSON-RPC&nbsp;service.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;duration_ms:&nbsp;Must&nbsp;be&nbsp;500;&nbsp;this&nbsp;baseline&nbsp;does&nbsp;not&nbsp;permit&nbsp;other&nbsp;durations.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;JSON-serializable&nbsp;``SetPWMServo``&nbsp;request&nbsp;whose&nbsp;params&nbsp;alternate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;servo&nbsp;ID&nbsp;and&nbsp;target&nbsp;after&nbsp;the&nbsp;duration.&nbsp;This&nbsp;function&nbsp;sends&nbsp;nothing.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Disallowed&nbsp;ID,&nbsp;nonfinite/out-of-range&nbsp;target,&nbsp;or&nbsp;duration.<br>
+&nbsp;<br>
+App&nbsp;values&nbsp;are&nbsp;not&nbsp;calibrated&nbsp;Cartesian&nbsp;coordinates&nbsp;or&nbsp;measured&nbsp;angles.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ALLOWED</strong> = {1, 3, 5, 6}<br>
+<strong>BASE_POSE</strong> = {'1': 4, '3': 48, '5': 4, '6': 0}<br>
+<strong>CUBES</strong> = {'deposition': {'approach': {'3': 74, '5': -56, '6': -4}, 'color': 'green', 'destination': {'3': 90, '5': -54, '6': 90}, 'grip': -2, 'open': -30, 'pickup': {'3': 74, '5': -56, '6': -4}, 'raised': {'3': 74, '5': -34, '6': -4}, 'record': 'docs/poses/deposition/manifest.json', 'recorded_id4': 20, 'release': -24, ...}, 'etch': {'approach': {'3': 76, '5': -50, '6': 32}, 'color': 'red', 'destination': {'3': 90, '5': -58, '6': 90}, 'grip': 6, 'open': -42, 'pickup': {'3': 80, '5': -60, '6': 32}, 'raised': {'3': 80, '5': -30, '6': 32}, 'record': 'docs/poses/etch/manifest.json', 'recorded_id4': 0, 'release': -44, ...}, 'metrology': {'approach': {'3': 70, '5': -48, '6': -46}, 'color': 'blue/cyan', 'derived': ['Start uses latest etch start; no metrology start controls supplied.', 'Pre-turn lift uses ID3=70/ID5=-32 from IMG_1015,...rmediate pose is inferred, not separately taught.'], 'destination': {'3': 90, '5': -70, '6': 90}, 'grip': -2, 'open': -40, 'pickup': {'3': 70, '5': -60, '6': -46}, 'raised': {'3': 70, '5': -32, '6': -46}, 'record': 'docs/poses/metrology/manifest.json', 'recorded_id4': 4, ...}}<br>
+<strong>DEFAULT_DURATION_MS</strong> = 500<br>
+<strong>LIFT_TRIM</strong> = 0.5<br>
+<strong>MIN_ID3</strong> = 30<br>
+<strong>POSE_DATA</strong> = {'description': 'Latest deposition/metrology/etch records. ID4 om...erived transitions require physical verification.', 'duration_ms': 500, 'excluded_joint_ids': [4], 'historical_pose_set': {'description': 'Phone-taught arm station poses; IDs 1,3,5,6 only...tation detection or autonomous execution implied.', 'excluded_joint_ids': [4], 'lift_trim': {'apply_to': 'raised pose only; preserve recorded values', 'command_delta': 0.5, 'joint_id': 5, 'physically_verified': False, 'units': 'app command units; not mm or percent'}, 'stations': {'cube_minus32': {'color': None, 'grip': 6, 'note': 'Pickup/raised assignment inferred from filename ... confirmation pending. Open setting not recorded.', 'open': None, 'pickup': {'3': 54, '5': -74, '6': -32}, 'raised': {'3': 54, '5': -42, '6': -32}, 'source': ['IMG_0965.HEIC', 'IMG_0966.HEIC'], 'station': None}, 'cube_plus32': {'approach': {'3': 54, '5': -42, '6': 30}, 'color': None, 'grip': 4, 'note': 'Approach/pickup/raised stage assignment inferred...ed; unchanged physical ID4 position not verified.', 'open': -44, 'pickup': {'3': 52, '5': -82, '6': 32}, 'raised': {'3': 52, '5': -50, '6': 32}, 'source': ['IMG_0967.HEIC', 'IMG_0968.HEIC', 'IMG_0969.HEIC'], 'station': None}, 'red_deposition': {'color': 'red', 'grip': 6, 'open': -24, 'pickup': {'3': 44, '5': -82, '6': 0}, 'raised': {'3': 44, '5': -56, '6': 2}, 'source': ['IMG_0955.HEIC', 'IMG_0956.HEIC'], 'station': 'deposition'}}, 'wheels_enabled': False}, 'lift_trim': {'apply_to': 'approach, raised, empty-arm retract; contact poses unchanged', 'command_delta': 0.5, 'joint_id': 5, 'units': 'app command units, not mm or percent'}, 'pose_set': 'station-photos-v6', 'stations': {'deposition': {'approach': {'3': 74, '5': -56, '6': -4}, 'color': 'green', 'destination': {'3': 90, '5': -54, '6': 90}, 'grip': -2, 'open': -30, 'pickup': {'3': 74, '5': -56, '6': -4}, 'raised': {'3': 74, '5': -34, '6': -4}, 'record': 'docs/poses/deposition/manifest.json', 'recorded_id4': 20, 'release': -24, ...}, 'etch': {'approach': {'3': 76, '5': -50, '6': 32}, 'color': 'red', 'destination': {'3': 90, '5': -58, '6': 90}, 'grip': 6, 'open': -42, 'pickup': {'3': 80, '5': -60, '6': 32}, 'raised': {'3': 80, '5': -30, '6': 32}, 'record': 'docs/poses/etch/manifest.json', 'recorded_id4': 0, 'release': -44, ...}, 'metrology': {'approach': {'3': 70, '5': -48, '6': -46}, 'color': 'blue/cyan', 'derived': ['Start uses latest etch start; no metrology start controls supplied.', 'Pre-turn lift uses ID3=70/ID5=-32 from IMG_1015,...rmediate pose is inferred, not separately taught.'], 'destination': {'3': 90, '5': -70, '6': 90}, 'grip': -2, 'open': -40, 'pickup': {'3': 70, '5': -60, '6': -46}, 'raised': {'3': 70, '5': -32, '6': -46}, 'record': 'docs/poses/metrology/manifest.json', 'recorded_id4': 4, ...}}, 'wheels_enabled': False}<br>
+<strong>POSE_FILE</strong> = PosixPath('/Users/joshua/Desktop/ai-based wafer/hardware/station_poses.json')<br>
+<strong>POSE_SET</strong> = 'station-photos-v6'<br>
+<strong>SETTLE_SECONDS</strong> = 0.15</td></tr></table>
+</body></html>

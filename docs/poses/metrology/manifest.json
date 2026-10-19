@@ -1,0 +1,204 @@
+{
+  "station": "metrology",
+  "cube_color": "blue/cyan",
+  "status": "visual record only; not executable",
+  "ordering": "Logical stages inferred from image content and joint changes; exact screenshot/photo synchronization unverified. Original filename order retained in inventory.",
+  "excluded_command_ids": [
+    4
+  ],
+  "records": [
+    {
+      "order": 1,
+      "stage": "start",
+      "label": "Start/reference photo",
+      "controls": [],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1007.JPG",
+          "copy": "01_start_robot_01.jpg"
+        }
+      ],
+      "observation": "Arm upright, empty gripper; blue cube rests at Met. No joint-setting screenshot confidently matches this start photo."
+    },
+    {
+      "order": 2,
+      "stage": "approach",
+      "label": "Open approach above metrology",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1008.HEIC",
+          "copy": "02_approach_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -40,
+            "3": 70,
+            "4": 4,
+            "5": -48,
+            "6": -46
+          },
+          "displayed_voltage_v": 8.3
+        }
+      ],
+      "photos": [],
+      "observation": "Open gripper command, base -46; ID5 is -48. No separate external photo confidently matches this higher approach setting."
+    },
+    {
+      "order": 3,
+      "stage": "lower",
+      "label": "Lower/open at cube",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1009.HEIC",
+          "copy": "03_lower_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -40,
+            "3": 70,
+            "4": 4,
+            "5": -60,
+            "6": -46
+          },
+          "displayed_voltage_v": 8.3
+        },
+        {
+          "source": "/Users/joshua/Downloads/IMG_1011.HEIC",
+          "copy": "03_lower_controls_02.jpg",
+          "displayed_joint_values": {
+            "1": -40,
+            "3": 70,
+            "4": 4,
+            "5": -60,
+            "6": -46
+          },
+          "displayed_voltage_v": 8.3
+        }
+      ],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1010.jpg",
+          "copy": "03_lower_robot_01.jpg"
+        }
+      ],
+      "observation": "Open fingers straddle the blue cube on the Met surface. 1009 and 1011 have identical joint settings; their LED color controls differ."
+    },
+    {
+      "order": 4,
+      "stage": "grip",
+      "label": "Grip blue cube",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1012.HEIC",
+          "copy": "04_grip_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -2,
+            "3": 70,
+            "4": 4,
+            "5": -60,
+            "6": -46
+          },
+          "displayed_voltage_v": 8.3
+        }
+      ],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1013.jpg",
+          "copy": "04_grip_robot_01.jpg"
+        }
+      ],
+      "observation": "Fingers contact opposite sides of blue cube. Photo shows cube tilted and apparently just clear of the surface; exact lift height is not measured."
+    },
+    {
+      "order": 5,
+      "stage": "lift",
+      "label": "Raised cube \u2014 photo only",
+      "controls": [],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1014.jpg",
+          "copy": "05_lift_robot_01.jpg"
+        }
+      ],
+      "observation": "Blue cube is visibly held higher above the empty Met outline. No separate screenshot provides the exact pre-turn lift setting."
+    },
+    {
+      "order": 6,
+      "stage": "turn",
+      "label": "Turn held cube toward tray",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1015.HEIC",
+          "copy": "06_turn_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -2,
+            "3": 70,
+            "4": 4,
+            "5": -32,
+            "6": 90
+          },
+          "displayed_voltage_v": 8.2
+        }
+      ],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1016.jpg",
+          "copy": "06_turn_robot_01.jpg"
+        }
+      ],
+      "observation": "Blue cube remains held above the tray at left. Compared with pickup, both shoulder ID5 and base ID6 have changed; intermediate timing/order is not shown."
+    },
+    {
+      "order": 7,
+      "stage": "lower_tray",
+      "label": "Lower held cube into tray",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1017.HEIC",
+          "copy": "07_lower_tray_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -2,
+            "3": 90,
+            "4": 4,
+            "5": -70,
+            "6": 90
+          },
+          "displayed_voltage_v": 8.2
+        }
+      ],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1018.jpg",
+          "copy": "07_lower_tray_robot_01.jpg"
+        },
+        {
+          "source": "/Users/joshua/Downloads/IMG_1019.jpg",
+          "copy": "07_lower_tray_robot_02.jpg"
+        }
+      ],
+      "observation": "1018 shows cube held low over the tray; 1019 shows it farther down, apparently at the tray surface. Preserve both views; no extra control setting establishes an additional lower pose."
+    },
+    {
+      "order": 8,
+      "stage": "release",
+      "label": "Release blue cube in tray",
+      "controls": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1020.HEIC",
+          "copy": "08_release_controls_01.jpg",
+          "displayed_joint_values": {
+            "1": -36,
+            "3": 90,
+            "4": 4,
+            "5": -70,
+            "6": 90
+          },
+          "displayed_voltage_v": 8.3
+        }
+      ],
+      "photos": [
+        {
+          "source": "/Users/joshua/Downloads/IMG_1021.jpg",
+          "copy": "08_release_robot_01.jpg"
+        }
+      ],
+      "observation": "Gripper is open and blue cube is visible in the tray beside the green cube. No subsequent empty-arm return is supplied."
+    }
+  ]
+}

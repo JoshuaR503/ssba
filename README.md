@@ -5,6 +5,20 @@ scikit-learn, joblib, and Gunicorn.
 This scaffold separates scheduling, communication, robot control, and CPU telemetry.
 No application or robot movement is started by installation or by importing modules.
 
+## Working physical pickup — 2026-10-17
+
+The operator reported the calibrated non-LLM transfer and corrected AI image-check version worked. Current commands run from the Mac against the Pi vendor service:
+
+```bash
+python3 scripts/test_pickup_without_id4.py --execute
+python3 llm_supervisor/pickup.py --execute
+python3 llm_supervisor/calibration.py --go
+```
+
+Across these scripts, `--execute` is automatic and `--go` is step by step; no flags preview only. Movements are 500 ms, with no startup countdown. Green=deposition, blue/cyan=metrology, red=etch. ID4 is excluded and ID3 >=30. The AI checks at exact open pickup height before closing, uses a weak “likely carrying” color cue after lift, and treats release imagery as advisory. This is not measured grip confirmation or a validated fully autonomous system.
+
+See [working guide](docs/working_pickup.md), [AI/calibration guide](llm_supervisor/README.md), [session results](docs/session_2026-10-17.md), and [PyDoc](llm_supervisor/pydoc/index.md). The scaffold adapter mentioned below is a separate subsystem from these vendor-RPC pickup scripts.
+
 ## Current status
 
 For copying/installing the project on the robot, start with

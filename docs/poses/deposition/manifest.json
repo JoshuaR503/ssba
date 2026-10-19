@@ -1,0 +1,137 @@
+{
+  "station": "deposition",
+  "cube_color": "green",
+  "status": "visual record only; not executable",
+  "pairing": "Adjacent filename order suggests screenshot/photo pairs; photos do not independently prove every displayed angle.",
+  "excluded_command_ids": [
+    4
+  ],
+  "records": [
+    {
+      "order": 1,
+      "stage": "start",
+      "label": "Start/reference pose",
+      "controls_source": "/Users/joshua/Downloads/IMG_0992.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_0993.JPG",
+      "controls_copy": "01_start_controls.jpg",
+      "robot_photo_copy": "01_start_robot.jpg",
+      "displayed_joint_values": {
+        "1": 4,
+        "3": 60,
+        "4": 20,
+        "5": -6,
+        "6": -4
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Arm upright; empty gripper fingers close together. Green cube rests at Disp; red at Etch and blue at Met."
+    },
+    {
+      "order": 2,
+      "stage": "approach",
+      "label": "Open approach to green cube",
+      "controls_source": "/Users/joshua/Downloads/IMG_0994.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_0995.JPG",
+      "controls_copy": "02_approach_controls.jpg",
+      "robot_photo_copy": "02_approach_robot.jpg",
+      "displayed_joint_values": {
+        "1": -30,
+        "3": 74,
+        "4": 20,
+        "5": -56,
+        "6": -4
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Arm extended forward; fingers open around/above green cube, which remains on cardboard."
+    },
+    {
+      "order": 3,
+      "stage": "grip",
+      "label": "Grip at deposition pickup location",
+      "controls_source": "/Users/joshua/Downloads/IMG_0996.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_0997.JPG",
+      "controls_copy": "03_grip_controls.jpg",
+      "robot_photo_copy": "03_grip_robot.jpg",
+      "displayed_joint_values": {
+        "1": -2,
+        "3": 74,
+        "4": 20,
+        "5": -56,
+        "6": -4
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Fingers sit on opposite sides of green cube. Cube is still on the surface; lift is not yet shown."
+    },
+    {
+      "order": 4,
+      "stage": "lift",
+      "label": "Lift green cube",
+      "controls_source": "/Users/joshua/Downloads/IMG_0998.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_0999.JPG",
+      "controls_copy": "04_lift_controls.jpg",
+      "robot_photo_copy": "04_lift_robot.jpg",
+      "displayed_joint_values": {
+        "1": -2,
+        "3": 74,
+        "4": 20,
+        "5": -34,
+        "6": -4
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Green cube visibly held above the cardboard; Disp outline is empty."
+    },
+    {
+      "order": 5,
+      "stage": "turn",
+      "label": "Turn toward drop-off",
+      "controls_source": "/Users/joshua/Downloads/IMG_1001.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_1002.JPG",
+      "controls_copy": "05_turn_controls.jpg",
+      "robot_photo_copy": "05_turn_robot.jpg",
+      "displayed_joint_values": {
+        "1": -2,
+        "3": 74,
+        "4": 20,
+        "5": -34,
+        "6": 90
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Arm and held green cube extend toward the tray at the left of the photo. Cube remains suspended."
+    },
+    {
+      "order": 6,
+      "stage": "lower",
+      "label": "Lower held cube toward tray",
+      "controls_source": "/Users/joshua/Downloads/IMG_1003.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_1004.JPG",
+      "controls_copy": "06_lower_controls.jpg",
+      "robot_photo_copy": "06_lower_robot.jpg",
+      "displayed_joint_values": {
+        "1": -2,
+        "3": 90,
+        "4": 20,
+        "5": -54,
+        "6": 90
+      },
+      "displayed_voltage_v": 8.2,
+      "observation": "Green cube is held over the open tray, lower than in previous view. Contact with tray bottom is not established."
+    },
+    {
+      "order": 7,
+      "stage": "release",
+      "label": "Release into tray",
+      "controls_source": "/Users/joshua/Downloads/IMG_1005.HEIC",
+      "robot_photo_source": "/Users/joshua/Downloads/IMG_1006.JPG",
+      "controls_copy": "07_release_controls.jpg",
+      "robot_photo_copy": "07_release_robot.jpg",
+      "displayed_joint_values": {
+        "1": -24,
+        "3": 90,
+        "4": 20,
+        "5": -54,
+        "6": 90
+      },
+      "displayed_voltage_v": 8.3,
+      "observation": "Fingers are separated; green cube is visible in the tray below, no longer visibly held."
+    }
+  ]
+}

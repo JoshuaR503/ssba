@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module watch_cpu_temperature</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">watch_cpu_temperature</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/scripts/watch_cpu_temperature.py">/Users/joshua/Desktop/ai-based wafer/scripts/watch_cpu_temperature.py</a></td></tr></table>
+    <p><span class="code">Read-only&nbsp;Pi&nbsp;CPU&nbsp;monitor.&nbsp;No&nbsp;dependencies,&nbsp;services,&nbsp;or&nbsp;motor&nbsp;commands.<br>
+&nbsp;<br>
+Run&nbsp;on&nbsp;Pi:&nbsp;python3&nbsp;watch_cpu_temperature.py<br>
+Ctrl+C&nbsp;stops.&nbsp;Alerts&nbsp;appear&nbsp;only&nbsp;in&nbsp;this&nbsp;terminal;&nbsp;BEL&nbsp;sound&nbsp;depends&nbsp;on&nbsp;settings.<br>
+Thresholds&nbsp;below&nbsp;are&nbsp;project&nbsp;early&nbsp;warnings,&nbsp;not&nbsp;hardware&nbsp;safety&nbsp;limits.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-classify"><strong>classify</strong></a>(temp, rate)</dt><dd><span class="code">Return&nbsp;a&nbsp;project&nbsp;early-warning&nbsp;label&nbsp;from&nbsp;Celsius&nbsp;and&nbsp;Celsius/minute.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Read&nbsp;the&nbsp;CPU&nbsp;sensor&nbsp;every&nbsp;five&nbsp;seconds;&nbsp;print&nbsp;a&nbsp;rolling&nbsp;one-minute&nbsp;trend.<br>
+&nbsp;<br>
+Return&nbsp;1&nbsp;on&nbsp;sensor&nbsp;error&nbsp;or&nbsp;0&nbsp;on&nbsp;interruption.&nbsp;This&nbsp;does&nbsp;not&nbsp;measure&nbsp;servo,<br>
+battery&nbsp;or&nbsp;wiring&nbsp;temperatures&nbsp;and&nbsp;does&nbsp;not&nbsp;control&nbsp;cooling&nbsp;or&nbsp;movement.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>SENSOR</strong> = PosixPath('/sys/class/thermal/thermal_zone0/temp')</td></tr></table>
+</body></html>

@@ -1,0 +1,4 @@
+{"time_utc": "2026-10-18T00:09:03.246149+00:00", "type": "move_accepted", "station": "deposition", "step": 1, "targets": {"1": 4, "3": 60, "5": -6, "6": -4}, "duration_ms": 500}
+{"time_utc": "2026-10-18T00:09:03.970932+00:00", "type": "move_accepted", "station": "deposition", "step": 2, "targets": {"3": 74, "5": -55.5, "6": -4, "1": -30}, "duration_ms": 500}
+{"time_utc": "2026-10-18T00:09:05.448929+00:00", "type": "checkpoint", "station": "deposition", "checkpoint": "approach", "result": {"status": "uncertain", "pickup_area_visible": false, "evidence": "The image is heavily distorted and obscured by artifacts, failing to show the green cube or a recognizable pickup region clearly."}, "api_elapsed_seconds": 1.377}
+{"time_utc": "2026-10-18T00:09:05.449540+00:00", "type": "stopped", "reason": "deposition approach: uncertain. Stopped in current pose; no recovery movement.", "pending": ["deposition"]}

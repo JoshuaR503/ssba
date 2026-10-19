@@ -1,0 +1,18 @@
+{
+  "date_local": "2026-10-17",
+  "timezone": "America/Los_Angeles",
+  "photos": [
+    {
+      "file": "IMG_1051.jpg",
+      "original": "/Users/joshua/Downloads/IMG_1051.jpg",
+      "sha256": "7aff7bb6b896c2e23377b17bead6d0902eeda5d6c23c1cf17862d8e173a9c9e2"
+    },
+    {
+      "file": "IMG_1053.jpg",
+      "original": "/Users/joshua/Downloads/IMG_1053.jpg",
+      "sha256": "95794da4d88a2ee22a852781859e2b3eddffcd9890a3539ffc9bf45cc6a1a1bb"
+    }
+  ],
+  "run_evidence": "approach_run.jsonl",
+  "pairing_note": "Photos supplied together as hardware/view evidence; exact synchronization and servo values for these two photos were not supplied. The separate deposition run is logged independently."
+}

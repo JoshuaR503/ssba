@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module supervisor</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">supervisor</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/llm_supervisor/supervisor.py">/Users/joshua/Desktop/ai-based wafer/llm_supervisor/supervisor.py</a></td></tr></table>
+    <p><span class="code">Isolated&nbsp;LLM&nbsp;supervisor&nbsp;experiment:&nbsp;advisory&nbsp;decisions,&nbsp;never&nbsp;robot&nbsp;motion.<br>
+&nbsp;<br>
+Uses&nbsp;only&nbsp;the&nbsp;standard&nbsp;library.&nbsp;Default&nbsp;demo&nbsp;is&nbsp;entirely&nbsp;offline.&nbsp;Explicit<br>
+--live&nbsp;sends&nbsp;the&nbsp;selected&nbsp;state/instruction&nbsp;or&nbsp;two&nbsp;images&nbsp;to&nbsp;Google's&nbsp;API.<br>
+The&nbsp;committed&nbsp;working&nbsp;runner/configuration&nbsp;are&nbsp;neither&nbsp;imported&nbsp;nor&nbsp;modified.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+<a href="base64.html">base64</a><br>
+</td><td class="multicolumn"><a href="getpass.html">getpass</a><br>
+<a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+<a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-ask_gemini"><strong>ask_gemini</strong></a>(prompt, schema, images=(), model='gemini-3.5-flash-lite', *, api_key=None)</dt><dd><span class="code">Request&nbsp;constrained&nbsp;JSON&nbsp;over&nbsp;HTTPS;&nbsp;expose&nbsp;no&nbsp;key&nbsp;or&nbsp;raw&nbsp;provider&nbsp;error.<br>
+&nbsp;<br>
+No&nbsp;SDK,&nbsp;automatic&nbsp;retries,&nbsp;robot&nbsp;requests&nbsp;or&nbsp;tool&nbsp;execution.&nbsp;A&nbsp;12-second<br>
+timeout&nbsp;bounds&nbsp;individual&nbsp;blocking&nbsp;socket&nbsp;operations,&nbsp;not&nbsp;total&nbsp;wall&nbsp;time.</span></dd></dl>
+ <dl><dt><a name="-capture_camera"><strong>capture_camera</strong></a>(host)</dt><dd><span class="code">GET&nbsp;one&nbsp;current&nbsp;camera&nbsp;JPEG/PNG,&nbsp;capped&nbsp;at&nbsp;5&nbsp;MB;&nbsp;never&nbsp;call&nbsp;motion&nbsp;RPC.<br>
+&nbsp;<br>
+Return&nbsp;inline&nbsp;image&nbsp;data&nbsp;without&nbsp;persisting&nbsp;the&nbsp;frame&nbsp;to&nbsp;disk.&nbsp;Host&nbsp;is&nbsp;a<br>
+hostname&nbsp;or&nbsp;IPv4&nbsp;address;&nbsp;no&nbsp;arbitrary&nbsp;URL&nbsp;paths&nbsp;or&nbsp;credentials&nbsp;are&nbsp;accepted.</span></dd></dl>
+ <dl><dt><a name="-check_grip"><strong>check_grip</strong></a>(before, after, station, model='gemini-3.5-flash-lite', *, api_key=None)</dt><dd><span class="code">Compare&nbsp;pre-grip/post-lift&nbsp;views;&nbsp;no&nbsp;motion,&nbsp;capture,&nbsp;or&nbsp;success&nbsp;guarantee.</span></dd></dl>
+ <dl><dt><a name="-demo"><strong>demo</strong></a>()</dt><dd><span class="code">Demonstrate&nbsp;local&nbsp;decision&nbsp;gates&nbsp;with&nbsp;synthetic&nbsp;inputs,&nbsp;no&nbsp;network/images.</span></dd></dl>
+ <dl><dt><a name="-eligible_stations"><strong>eligible_stations</strong></a>(state)</dt><dd><span class="code">Return&nbsp;locally&nbsp;eligible&nbsp;pending&nbsp;stations;&nbsp;busy&nbsp;arm/unready&nbsp;tray&nbsp;blocks&nbsp;all.</span></dd></dl>
+ <dl><dt><a name="-encode_image"><strong>encode_image</strong></a>(raw)</dt><dd><span class="code">Validate&nbsp;image&nbsp;signature/size&nbsp;and&nbsp;encode&nbsp;bytes,&nbsp;keeping&nbsp;captures&nbsp;in&nbsp;memory.</span></dd></dl>
+ <dl><dt><a name="-image_part"><strong>image_part</strong></a>(path)</dt><dd><span class="code">Encode&nbsp;one&nbsp;local&nbsp;JPEG/PNG&nbsp;for&nbsp;explicit&nbsp;API&nbsp;upload,&nbsp;limited&nbsp;to&nbsp;5&nbsp;MB.</span></dd></dl>
+ <dl><dt><a name="-inspect_camera"><strong>inspect_camera</strong></a>(host='raspberrypi.local', model='gemini-3.5-flash-lite', *, api_key=None)</dt><dd><span class="code">Read&nbsp;one&nbsp;live&nbsp;frame&nbsp;and&nbsp;ask&nbsp;only&nbsp;whether&nbsp;red,&nbsp;green&nbsp;and&nbsp;blue&nbsp;cubes&nbsp;are&nbsp;visible.<br>
+&nbsp;<br>
+Absence&nbsp;requires&nbsp;a&nbsp;clear&nbsp;view;&nbsp;cropped/occluded&nbsp;scenes&nbsp;must&nbsp;be&nbsp;uncertain.<br>
+Colors&nbsp;do&nbsp;not&nbsp;establish&nbsp;station&nbsp;location,&nbsp;distance,&nbsp;readiness&nbsp;or&nbsp;grasp&nbsp;state.</span></dd></dl>
+ <dl><dt><a name="-local_api_key"><strong>local_api_key</strong></a>()</dt><dd><span class="code">Read&nbsp;the&nbsp;local&nbsp;ignored&nbsp;key&nbsp;file;&nbsp;environment&nbsp;values&nbsp;take&nbsp;precedence.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">CLI&nbsp;for&nbsp;offline&nbsp;demo&nbsp;or&nbsp;explicitly&nbsp;requested&nbsp;live&nbsp;advisory&nbsp;API&nbsp;calls.</span></dd></dl>
+ <dl><dt><a name="-plan"><strong>plan</strong></a>(state, instruction, model='gemini-3.5-flash-lite', *, api_key=None)</dt><dd><span class="code">Ask&nbsp;for&nbsp;one&nbsp;next&nbsp;station;&nbsp;locally&nbsp;reject&nbsp;unsupported/unready&nbsp;selections.</span></dd></dl>
+ <dl><dt><a name="-validate_grip"><strong>validate_grip</strong></a>(result)</dt><dd><span class="code">Validate&nbsp;visual&nbsp;evidence&nbsp;fields&nbsp;and&nbsp;downgrade&nbsp;unsupported&nbsp;held&nbsp;judgments.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;model&nbsp;interpretation,&nbsp;not&nbsp;a&nbsp;physical&nbsp;sensor.&nbsp;An&nbsp;empty/uncertain<br>
+outcome&nbsp;must&nbsp;pause&nbsp;a&nbsp;future&nbsp;executor,&nbsp;never&nbsp;trigger&nbsp;an&nbsp;automatic&nbsp;regrip.</span></dd></dl>
+ <dl><dt><a name="-validate_plan"><strong>validate_plan</strong></a>(decision, state)</dt><dd><span class="code">Reject&nbsp;malformed/unavailable&nbsp;model&nbsp;actions;&nbsp;never&nbsp;interpret&nbsp;output&nbsp;as&nbsp;code.</span></dd></dl>
+ <dl><dt><a name="-validate_presence"><strong>validate_presence</strong></a>(result)</dt><dd><span class="code">Validate&nbsp;visible&nbsp;color&nbsp;inventory;&nbsp;visibility&nbsp;does&nbsp;not&nbsp;imply&nbsp;pickup&nbsp;readiness.</span></dd></dl>
+ <dl><dt><a name="-validate_state"><strong>validate_state</strong></a>(state)</dt><dd><span class="code">Validate&nbsp;operator/controller-supplied&nbsp;state;&nbsp;do&nbsp;not&nbsp;infer&nbsp;physical&nbsp;readiness.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>DEFAULT_MODEL</strong> = 'gemini-3.5-flash-lite'<br>
+<strong>GRIP_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'cube_clear_of_surface': {'type': 'boolean'}, 'cube_visible_between_fingers': {'type': 'boolean'}, 'evidence': {'type': 'string'}, 'status': {'enum': ['held', 'empty', 'uncertain'], 'type': 'string'}}, 'required': ['status', 'cube_visible_between_fingers', 'cube_clear_of_surface', 'evidence'], 'type': 'object'}<br>
+<strong>PLAN_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'action': {'enum': ['pick_station', 'pause', 'done'], 'type': 'string'}, 'reason': {'type': 'string'}, 'station': {'enum': ['', 'deposition', 'metrology', 'etch'], 'type': 'string'}}, 'required': ['action', 'station', 'reason'], 'type': 'object'}<br>
+<strong>PRESENCE_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'blue': {'enum': ['present', 'absent', 'uncertain'], 'type': 'string'}, 'evidence': {'type': 'string'}, 'green': {'enum': ['present', 'absent', 'uncertain'], 'type': 'string'}, 'pickup_area_visible': {'type': 'boolean'}, 'red': {'enum': ['present', 'absent', 'uncertain'], 'type': 'string'}}, 'required': ['red', 'green', 'blue', 'pickup_area_visible', 'evidence'], 'type': 'object'}<br>
+<strong>STATIONS</strong> = ('deposition', 'metrology', 'etch')</td></tr></table>
+</body></html>

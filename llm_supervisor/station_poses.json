@@ -1,0 +1,127 @@
+{
+  "pose_set": "station-photos-v6",
+  "description": "Latest deposition/metrology/etch records. ID4 omitted, ID3 >=30. Derived transitions require physical verification.",
+  "excluded_joint_ids": [
+    4
+  ],
+  "wheels_enabled": false,
+  "duration_ms": 500,
+  "lift_trim": {
+    "joint_id": 5,
+    "command_delta": 0.5,
+    "units": "app command units, not mm or percent",
+    "apply_to": "approach, raised, empty-arm retract; contact poses unchanged"
+  },
+  "stations": {
+    "deposition": {
+      "color": "green",
+      "start": {
+        "1": -30,
+        "3": 74,
+        "5": -33.5,
+        "6": -4
+      },
+      "approach": {
+        "3": 74,
+        "5": -56,
+        "6": -4
+      },
+      "pickup": {
+        "3": 74,
+        "5": -56,
+        "6": -4
+      },
+      "raised": {
+        "3": 74,
+        "5": -34,
+        "6": -4
+      },
+      "destination": {
+        "3": 90,
+        "5": -54,
+        "6": 90
+      },
+      "open": -30,
+      "grip": -2,
+      "release": -24,
+      "record": "docs/poses/deposition/manifest.json",
+      "recorded_id4": 20,
+      "approach_trim": false
+    },
+    "metrology": {
+      "color": "blue/cyan",
+      "start": {
+        "1": -40,
+        "3": 74,
+        "5": -33.5,
+        "6": -4
+      },
+      "approach": {
+        "3": 70,
+        "5": -48,
+        "6": -46
+      },
+      "pickup": {
+        "3": 70,
+        "5": -60,
+        "6": -46
+      },
+      "raised": {
+        "3": 70,
+        "5": -32,
+        "6": -46
+      },
+      "destination": {
+        "3": 90,
+        "5": -70,
+        "6": 90
+      },
+      "open": -40,
+      "grip": -2,
+      "release": -36,
+      "record": "docs/poses/metrology/manifest.json",
+      "recorded_id4": 4,
+      "derived": [
+        "Start uses latest etch start; no metrology start controls supplied.",
+        "Pre-turn lift uses ID3=70/ID5=-32 from IMG_1015, retaining pickup base=-46. This intermediate pose is inferred, not separately taught."
+      ]
+    },
+    "etch": {
+      "color": "red",
+      "start": {
+        "1": -42,
+        "3": 74,
+        "5": -33.5,
+        "6": -4
+      },
+      "approach": {
+        "3": 76,
+        "5": -50,
+        "6": 32
+      },
+      "pickup": {
+        "3": 76,
+        "5": -60,
+        "6": 32
+      },
+      "raised": {
+        "3": 80,
+        "5": -30,
+        "6": 32
+      },
+      "destination": {
+        "3": 90,
+        "5": -58,
+        "6": 90
+      },
+      "open": -42,
+      "grip": 6,
+      "release": -44,
+      "record": "docs/poses/etch/manifest.json",
+      "recorded_id4": 0
+    }
+  },
+  "baseline_commit": "82959bdb447fe8fbddc6268dd9fcdf63c2d9a535",
+  "note": "Frozen active configuration from the operator-tested runner; experimental changes stay inside llm_supervisor.",
+  "base_pose_note": "Operator-selected raised base for all stations. Upright arm pose {3:48,5:4,6:0} is banned; preserve station-specific open gripper."
+}

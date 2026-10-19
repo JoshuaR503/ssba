@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module pickup</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">pickup</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/llm_supervisor/pickup.py">/Users/joshua/Desktop/ai-based wafer/llm_supervisor/pickup.py</a></td></tr></table>
+    <p><span class="code">Experimental&nbsp;checkpointed&nbsp;transfer,&nbsp;isolated&nbsp;from&nbsp;the&nbsp;working&nbsp;baseline.<br>
+&nbsp;<br>
+Preview&nbsp;is&nbsp;offline.&nbsp;--execute&nbsp;enables&nbsp;both&nbsp;camera/API&nbsp;calls&nbsp;and&nbsp;robot&nbsp;motion.<br>
+Movements&nbsp;use&nbsp;the&nbsp;latest&nbsp;calibrated&nbsp;poses&nbsp;at&nbsp;500&nbsp;ms&nbsp;plus&nbsp;150&nbsp;ms&nbsp;settling.<br>
+No&nbsp;model-generated&nbsp;angles,&nbsp;recovery,&nbsp;regrips&nbsp;or&nbsp;ID4/wheel&nbsp;commands&nbsp;are&nbsp;accepted.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="supervisor.html">supervisor</a><br>
+<a href="argparse.html">argparse</a><br>
+</td><td class="multicolumn"><a href="json.html">json</a><br>
+<a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+<a href="time.html">time</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#RuntimeError">builtins.RuntimeError</a>(<a href="builtins.html#Exception">builtins.Exception</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pickup.html#CheckpointPause">CheckpointPause</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="CheckpointPause">class <strong>CheckpointPause</strong></a>(<a href="builtins.html#RuntimeError">builtins.RuntimeError</a>)</td></tr>
+
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">A&nbsp;visual&nbsp;checkpoint&nbsp;did&nbsp;not&nbsp;establish&nbsp;the&nbsp;required&nbsp;visible&nbsp;evidence.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pickup.html#CheckpointPause">CheckpointPause</a></dd>
+<dd><a href="builtins.html#RuntimeError">builtins.RuntimeError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#RuntimeError">builtins.RuntimeError</a>:<br>
+<dl><dt><a name="CheckpointPause-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#RuntimeError">builtins.RuntimeError</a>:<br>
+<dl><dt><a name="CheckpointPause-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> from <a href="builtins.html#type">builtins.type</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="CheckpointPause-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><span class="code">Implement&nbsp;delattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><span class="code">Return&nbsp;getattr(self,&nbsp;name).</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><span class="code">Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CheckpointPause-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-add_note"><strong>add_note</strong></a>(...)</dt><dd><span class="code">Exception.<a href="#CheckpointPause-add_note">add_note</a>(note)&nbsp;--<br>
+add&nbsp;a&nbsp;note&nbsp;to&nbsp;the&nbsp;exception</span></dd></dl>
+
+<dl><dt><a name="CheckpointPause-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><span class="code">Exception.<a href="#CheckpointPause-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><span class="code">exception&nbsp;cause</span></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><span class="code">exception&nbsp;context</span></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-assess"><strong>assess</strong></a>(kind, station, frame, before=None, model='gemini-3.5-flash-lite')</dt><dd><span class="code">Request&nbsp;one&nbsp;observation&nbsp;at&nbsp;a&nbsp;completed&nbsp;pose;&nbsp;never&nbsp;request&nbsp;new&nbsp;joint&nbsp;angles.</span></dd></dl>
+ <dl><dt><a name="-configuration"><strong>configuration</strong></a>()</dt><dd><span class="code">Load&nbsp;the&nbsp;folder-local&nbsp;active&nbsp;pose&nbsp;file;&nbsp;never&nbsp;import&nbsp;the&nbsp;non-LLM&nbsp;runner.</span></dd></dl>
+ <dl><dt><a name="-execute_station"><strong>execute_station</strong></a>(station, data, host, model, record, *, approach_only=False, step_mode=False, initial_pose=None)</dt><dd><span class="code">Gate&nbsp;lowering,&nbsp;tray&nbsp;transfer&nbsp;and&nbsp;return&nbsp;with&nbsp;fresh&nbsp;checkpoint&nbsp;observations.<br>
+&nbsp;<br>
+A&nbsp;failed&nbsp;approach/carry&nbsp;check&nbsp;reverses&nbsp;acknowledged&nbsp;waypoints&nbsp;to&nbsp;the<br>
+taught&nbsp;start,&nbsp;then&nbsp;stops.&nbsp;After&nbsp;release,&nbsp;advisory&nbsp;observations&nbsp;never&nbsp;trigger<br>
+a&nbsp;return&nbsp;to&nbsp;pickup&nbsp;height:&nbsp;use&nbsp;the&nbsp;original&nbsp;retract/turn/start&nbsp;sequence.<br>
+Transport&nbsp;errors,&nbsp;malformed&nbsp;responses&nbsp;and&nbsp;Ctrl+C&nbsp;stop&nbsp;without&nbsp;blind&nbsp;reversal.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Offline&nbsp;preview&nbsp;by&nbsp;default;&nbsp;explicit&nbsp;execution&nbsp;enables&nbsp;checkpoints&nbsp;and&nbsp;motion.</span></dd></dl>
+ <dl><dt><a name="-re_host"><strong>re_host</strong></a>(host)</dt><dd><span class="code">Restrict&nbsp;robot&nbsp;destinations&nbsp;to&nbsp;a&nbsp;hostname/IPv4,&nbsp;not&nbsp;an&nbsp;arbitrary&nbsp;URL.</span></dd></dl>
+ <dl><dt><a name="-reverse_to_start"><strong>reverse_to_start</strong></a>(station, history, current, host, record, *, release_sent=False, step_mode=False)</dt><dd><span class="code">Restore&nbsp;pre-command&nbsp;targets&nbsp;in&nbsp;reverse,&nbsp;back&nbsp;to&nbsp;the&nbsp;taught&nbsp;station&nbsp;start.<br>
+&nbsp;<br>
+This&nbsp;reverses&nbsp;commanded&nbsp;waypoints,&nbsp;not&nbsp;measured&nbsp;physical&nbsp;trajectories.<br>
+Before&nbsp;release,&nbsp;reverse&nbsp;lift&nbsp;first,&nbsp;then&nbsp;reopen&nbsp;at&nbsp;source&nbsp;pickup&nbsp;height.<br>
+After&nbsp;a&nbsp;release&nbsp;was&nbsp;sent,&nbsp;keep&nbsp;fingers&nbsp;open:&nbsp;never&nbsp;regrip&nbsp;a&nbsp;delivered&nbsp;cube.<br>
+A&nbsp;failed&nbsp;reverse&nbsp;command&nbsp;stops&nbsp;immediately;&nbsp;there&nbsp;is&nbsp;no&nbsp;retry.</span></dd></dl>
+ <dl><dt><a name="-send_move"><strong>send_move</strong></a>(host, joints, number)</dt><dd><span class="code">Send&nbsp;exactly&nbsp;one&nbsp;500&nbsp;ms&nbsp;baseline&nbsp;move;&nbsp;no&nbsp;retries&nbsp;or&nbsp;recovery&nbsp;commands.</span></dd></dl>
+ <dl><dt><a name="-station_steps"><strong>station_steps</strong></a>(name, data, current=None)</dt><dd><span class="code">Build&nbsp;the&nbsp;calibrated&nbsp;pickup&nbsp;cycle&nbsp;and&nbsp;remove&nbsp;unchanged&nbsp;commands.</span></dd></dl>
+ <dl><dt><a name="-validate_carry"><strong>validate_carry</strong></a>(result)</dt><dd><span class="code">Gate&nbsp;on&nbsp;weak&nbsp;near-camera&nbsp;color&nbsp;continuity,&nbsp;never&nbsp;claim&nbsp;confirmed&nbsp;gripping.<br>
+&nbsp;<br>
+Matching&nbsp;close&nbsp;target&nbsp;fragments&nbsp;may&nbsp;pass&nbsp;without&nbsp;visible&nbsp;fingers/support.<br>
+Missing,&nbsp;conflicting,&nbsp;or&nbsp;clearly&nbsp;source-supported&nbsp;evidence&nbsp;must&nbsp;not&nbsp;pass.</span></dd></dl>
+ <dl><dt><a name="-validate_checkpoint"><strong>validate_checkpoint</strong></a>(result, kind)</dt><dd><span class="code">Strictly&nbsp;validate&nbsp;model&nbsp;evidence;&nbsp;uncertainty&nbsp;never&nbsp;authorizes&nbsp;continuation.</span></dd></dl>
+ <dl><dt><a name="-validate_targets"><strong>validate_targets</strong></a>(joints)</dt><dd><span class="code">Check&nbsp;every&nbsp;command&nbsp;locally,&nbsp;independently&nbsp;of&nbsp;any&nbsp;model&nbsp;response.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>CARRY_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'appearance_matches_before': {'type': 'boolean'}, 'clearly_left_on_source': {'type': 'boolean'}, 'evidence': {'type': 'string'}, 'status': {'enum': ['likely_carrying', 'not_carrying', 'uncertain'], 'type': 'string'}, 'target_color_visible_near_camera': {'type': 'boolean'}}, 'required': ['status', 'target_color_visible_near_camera', 'appearance_matches_before', 'clearly_left_on_source', 'evidence'], 'type': 'object'}<br>
+<strong>COLORS</strong> = {'deposition': 'green', 'etch': 'red', 'metrology': 'blue/cyan'}<br>
+<strong>RELEASE_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'evidence': {'type': 'string'}, 'status': {'enum': ['likely_released', 'target_still_visible', 'uncertain'], 'type': 'string'}}, 'required': ['status', 'evidence'], 'type': 'object'}<br>
+<strong>ROOT</strong> = PosixPath('/Users/joshua/Desktop/ai-based wafer/llm_supervisor')<br>
+<strong>TARGET_SCHEMA</strong> = {'additionalProperties': False, 'properties': {'appearance_consistent': {'description': 'Visible object appearance supports the expected ...ighting casts; taught pose alone is not evidence.', 'type': 'boolean'}, 'evidence': {'type': 'string'}, 'evidence_type': {'enum': ['full_cube', 'recognizable_partial_cube', 'insufficient'], 'type': 'string'}, 'pickup_area_visible': {'description': 'Relevant local pickup patch/edge is visible; the entire tabletop is not required.', 'type': 'boolean'}, 'status': {'enum': ['visible', 'absent', 'uncertain'], 'type': 'string'}}, 'required': ['status', 'pickup_area_visible', 'appearance_consistent', 'evidence_type', 'evidence'], 'type': 'object'}</td></tr></table>
+</body></html>

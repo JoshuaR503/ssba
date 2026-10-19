@@ -1,0 +1,6 @@
+{
+  "pending": ["deposition", "metrology", "etch"],
+  "available": {"deposition": true, "metrology": false, "etch": true},
+  "tray_ready": true,
+  "arm_idle": true
+}

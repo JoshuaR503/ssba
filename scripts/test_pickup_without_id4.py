@@ -4,12 +4,13 @@
 Run from the Mac project directory. With no arguments, print the complete plan
 without sending movement commands. ``--execute`` transfers green/deposition,
 blue/metrology, then red/etch into the tray and returns the empty arm after each
-transfer. ``--cube`` selects one station; ``--step`` enables optional prompts.
+transfer. ``--cube`` selects one station; ``--go`` executes step by step.
+``--execute`` runs automatically; ``--step`` remains a legacy prompt alias.
 
-Every movement requests 500 ms, followed by 150 ms settling. A five-second
-countdown precedes automatic execution. Targets come from the version-matched
+Every movement requests 500 ms, followed by 150 ms settling. Automatic execution starts immediately. Targets come from the version-matched
 ``hardware/station_poses.json`` file relative to this script, not the shell cwd.
-ID5 receives +0.5 command units on approach, lift, and empty-arm retract only.
+ID5 receives +0.5 command units on raised/retract poses and distinct
+approaches. Deposition approaches its exact pickup height without that trim.
 
 Only servo IDs 1 (gripper), 3 (wrist pitch), 5 (shoulder), and 6 (arm base) may
 be commanded. ID3 must remain >=30. ID4 and wheel commands are excluded; omission
@@ -49,6 +50,8 @@ import time
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
+from pickup_steps import compact_steps
+
 ALLOWED = {1, 3, 5, 6}
 MIN_ID3 = 30  # User-observed tip/backward-lean boundary; never command below this.
 DEFAULT_DURATION_MS = 500
@@ -87,8 +90,8 @@ def build_steps(selection='all'):
         selection: ``all``, ``deposition``, ``metrology``, or ``etch``.
 
     Returns:
-        List of (human-readable label, joint-target dictionary) tuples: eleven
-        per station, thirty-three for all stations. Unspecified joints retain
+        List of (human-readable label, joint-target dictionary) tuples.
+        The all-station plan has thirty actual movements after compaction. Unspecified joints retain
         their previous target; ID4 is never inserted.
 
     Raises:
@@ -108,14 +111,15 @@ def build_steps(selection='all'):
         raised = joint_pose(cube['raised'])
         raised[5] += LIFT_TRIM
         approach = joint_pose(cube['approach'])
-        approach[5] += LIFT_TRIM
+        if cube.get('approach_trim', True):
+            approach[5] += LIFT_TRIM
         approach[1] = cube['open']
         destination = joint_pose(cube['destination'])
         # Do not open/close during retract; retain station-specific release.
         retracted = {3: raised[3], 5: raised[5]}
         cycle = [
             ('Base/start, empty gripper (derived transition)', base.copy()),
-            ('Open approach with +0.5 ID5 clearance trim', approach),
+            ('Open at pickup height before gripping' if not cube.get('approach_trim', True) else 'Open approach with +0.5 ID5 clearance trim', approach),
             ('Lower to recorded pickup pose', pickup),
             ('Grip cube', {1: cube['grip']}),
             ('Lift with +0.5 ID5 clearance trim' + (' (derived pre-turn pose)' if name == 'metrology' else ''), raised),
@@ -127,6 +131,7 @@ def build_steps(selection='all'):
             ('Return empty arm to base/start (derived transition)', base.copy()),
         ]
         steps.extend((f'[{name.upper()} / {cube["color"]}] {label}', joints) for label, joints in cycle)
+    steps = compact_steps(steps)
     # Reject the entire plan before any motion, including later stations.
     for number, (_, joints) in enumerate(steps, 1):
         payload(joints, number)
@@ -163,6 +168,8 @@ def payload(joints, request_id, duration_ms=DEFAULT_DURATION_MS):
         raise ValueError('Only IDs 1, 3, 5, 6 allowed')
     if duration_ms != DEFAULT_DURATION_MS:
         raise ValueError('Unsupported movement duration')
+    if all(joints.get(joint) == value for joint, value in {3:48, 5:4, 6:0}.items()):
+        raise ValueError('Banned upright start pose; use raised base {3:74,5:-33.5,6:-4}')
     params = [duration_ms]
     for joint, target in joints.items():
         if not isinstance(target, (int, float)) or not math.isfinite(target):
@@ -181,14 +188,15 @@ def main():
     Return 0 on preview/completion/user step cancellation and 1 on caught
     execution or vision errors/interruption. Argparse handles usage errors.
     The entire plan is validated before the first request. Automatic mode has
-    one countdown, not per-step confirmations. Requests are sequential; each
+    no startup countdown or per-step confirmations. Requests are sequential; each
     accepted request is followed by its duration plus a settling interval.
 
     Optional vision reads snapshots even in preview and rechecks the locked
-    target after the countdown before movement. No automatic retry, release,
+    target immediately before movement. No automatic retry, release,
     or return is sent after an execution error."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--go', action='store_true', help='Execute step by step; type go before each move')
     parser.add_argument('--step', action='store_true', help='Optionally ask before each movement')
     parser.add_argument('--host', default='raspberrypi.local')
     parser.add_argument('--cube', choices=['all', *CUBES], default='all', help='All three cubes by default; release at destination, return empty arm to base')
@@ -198,6 +206,8 @@ def main():
     parser.add_argument('--at-observation-pose', action='store_true', help='Confirm arm is already at recorded base observation pose, with unchanged layout')
     parser.add_argument('--vision-config', default=str(Path(__file__).resolve().parents[1] / 'hardware/camera_pickup_zones.json'))
     args = parser.parse_args()
+    args.step = args.step or args.go
+    args.execute = args.execute or args.go
     if args.vision or args.configure_vision:
         if not args.at_observation_pose:
             parser.error('Camera is arm-mounted: set the recorded base observation pose, then provide --at-observation-pose. No motion sent.')
@@ -226,17 +236,15 @@ def main():
     print('Source photos display different ID4 values (20/4/0); actual fixed-joint geometry and derived returns are unverified.')
     print('Each move: 500 ms, then 150 ms settling. Metrology pre-turn lift is derived; see station_poses.json.')
     print(color('Each cube: base -> approach -> pickup -> lift -> destination -> release -> empty-arm return to base.', '1;33'))
-    print(color('Clearance trim: +0.5 ID5 command units on ALL approach/raised poses; not calibrated mm or percent. New transitions unverified.', '1;33'))
+    print(color('Clearance trim: +0.5 ID5 on raised/retract and distinct approaches; deposition uses exact pickup height. Units are not calibrated mm or percent.', '1;33'))
     print('Ctrl+C stops future commands; an already-sent move may finish.')
-    print(color('AUTOMATIC SELECTED CUBES — starts in 5 seconds. Ctrl+C cancels.', '1;33') if not args.step else color('STEP MODE: approval before each command.', '1;33'), flush=True)
+    print(color('AUTOMATIC SELECTED CUBES — starts immediately. Ctrl+C stops future commands.', '1;33') if not args.step else color('STEP MODE: approval before each command.', '1;33'), flush=True)
     try:
-        if not args.step:
-            time.sleep(5)
         if args.vision:
-            # Recheck after countdown, before any motion. Never silently switch target.
+            # Recheck before any motion. Never silently switch target.
             checked = select(args.host, args.vision_config, observation_pose=BASE_POSE, pose_set=POSE_SET, stations=list(CUBES))
             if checked['cube'] != target['cube'] or math.dist(checked['center'], target['center']) > 8:
-                raise RuntimeError('Target changed during countdown; no movement')
+                raise RuntimeError('Target changed before dispatch; no movement')
         for number, (label, joints) in enumerate(steps, 1):
             print(color(f'\nSTEP {number}/{len(steps)} — {label}', '1;36'))
             if args.step:

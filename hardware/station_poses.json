@@ -16,9 +16,9 @@
     "deposition": {
       "color": "green",
       "start": {
-        "1": 4,
-        "3": 60,
-        "5": -6,
+        "1": -30,
+        "3": 74,
+        "5": -33.5,
         "6": -4
       },
       "approach": {
@@ -45,15 +45,16 @@
       "grip": -2,
       "release": -24,
       "record": "docs/poses/deposition/manifest.json",
-      "recorded_id4": 20
+      "recorded_id4": 20,
+      "approach_trim": false
     },
     "metrology": {
       "color": "blue/cyan",
       "start": {
-        "1": 4,
-        "3": 48,
-        "5": 4,
-        "6": 0
+        "1": -40,
+        "3": 74,
+        "5": -33.5,
+        "6": -4
       },
       "approach": {
         "3": 70,
@@ -88,10 +89,10 @@
     "etch": {
       "color": "red",
       "start": {
-        "1": 4,
-        "3": 48,
-        "5": 4,
-        "6": 0
+        "1": -42,
+        "3": 74,
+        "5": -33.5,
+        "6": -4
       },
       "approach": {
         "3": 76,
@@ -99,7 +100,7 @@
         "6": 32
       },
       "pickup": {
-        "3": 80,
+        "3": 76,
         "5": -60,
         "6": 32
       },
@@ -203,5 +204,6 @@
       "physically_verified": false,
       "apply_to": "raised pose only; preserve recorded values"
     }
-  }
+  },
+  "base_pose_note": "Operator-selected raised base for all stations. Upright arm pose {3:48,5:4,6:0} is banned; preserve station-specific open gripper."
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module calibration</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">calibration</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/joshua/Desktop/ai-based%20wafer/llm_supervisor/calibration.py">/Users/joshua/Desktop/ai-based wafer/llm_supervisor/calibration.py</a></td></tr></table>
+    <p><span class="code">Step&nbsp;through&nbsp;open-gripper&nbsp;reference&nbsp;poses&nbsp;to&nbsp;mark&nbsp;the&nbsp;physical&nbsp;cube&nbsp;locations.<br>
+&nbsp;<br>
+Preview&nbsp;by&nbsp;default;&nbsp;--go&nbsp;prompts&nbsp;before&nbsp;each&nbsp;move;&nbsp;--execute&nbsp;runs&nbsp;automatically.<br>
+No&nbsp;grip,&nbsp;tray&nbsp;transfer,&nbsp;camera/API&nbsp;calls,&nbsp;or&nbsp;edits&nbsp;to&nbsp;taught&nbsp;targets.&nbsp;At&nbsp;the<br>
+pickup-height&nbsp;stop,&nbsp;align/mark&nbsp;the&nbsp;cube&nbsp;between&nbsp;the&nbsp;open&nbsp;fingers&nbsp;before&nbsp;moving<br>
+on.&nbsp;This&nbsp;is&nbsp;placement&nbsp;assistance,&nbsp;not&nbsp;automatic&nbsp;geometric/servo&nbsp;calibration.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Preview&nbsp;or&nbsp;position&nbsp;each&nbsp;station&nbsp;with&nbsp;explicit&nbsp;go&nbsp;before&nbsp;every&nbsp;move;&nbsp;never&nbsp;grip.</span></dd></dl>
+ <dl><dt><a name="-positioning_steps"><strong>positioning_steps</strong></a>(station, data, current=None)</dt><dd><span class="code">Build&nbsp;open-gripper&nbsp;positioning/retract&nbsp;steps,&nbsp;keeping&nbsp;contact&nbsp;pose&nbsp;untrimmed.<br>
+&nbsp;<br>
+Start&nbsp;uses&nbsp;the&nbsp;chosen&nbsp;raised&nbsp;base&nbsp;with&nbsp;this&nbsp;station's&nbsp;OPEN&nbsp;gripper&nbsp;value.<br>
+After&nbsp;the&nbsp;pickup-height&nbsp;pause,&nbsp;raise&nbsp;before&nbsp;turning&nbsp;back&nbsp;to&nbsp;start.&nbsp;Every<br>
+step&nbsp;explicitly&nbsp;retains&nbsp;the&nbsp;open&nbsp;value,&nbsp;so&nbsp;no&nbsp;gripping&nbsp;target&nbsp;is&nbsp;emitted.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>COLORS</strong> = {'deposition': 'green', 'etch': 'red', 'metrology': 'blue/cyan'}</td></tr></table>
+</body></html>

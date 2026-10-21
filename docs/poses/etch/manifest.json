@@ -28,7 +28,8 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1023.jpg",
-          "copy": "01_start_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Upright arm with empty gripper; red cube rests at Etch."
@@ -54,11 +55,13 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1025.jpg",
-          "copy": "02_approach_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1026.jpg",
-          "copy": "02_approach_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Open fingers approach the red cube on the cardboard. Both external views are retained."
@@ -84,11 +87,13 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1028.jpg",
-          "copy": "03_grip_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1029.jpg",
-          "copy": "03_grip_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Fingers close around the red cube at the surface. ID3 and ID5 also change from the approach setting; this is not only a gripper change."
@@ -114,11 +119,13 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1031.jpg",
-          "copy": "04_lift_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1032.jpg",
-          "copy": "04_lift_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Red cube is visibly suspended above its empty Etch outline."
@@ -144,7 +151,8 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1034.jpg",
-          "copy": "05_turn_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Red cube remains held while the arm turns toward the tray."
@@ -170,11 +178,13 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1036.jpg",
-          "copy": "06_lower_tray_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1037.jpg",
-          "copy": "06_lower_tray_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Red cube is held low over the tray containing green and blue cubes. Exact support/contact is not established from these views."
@@ -200,14 +210,17 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1039.jpg",
-          "copy": "07_release_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1040.jpg",
-          "copy": "07_release_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Open fingers and red cube resting above the green/blue cubes are visible; 1040 provides a closer view of the stack. No later return pose is supplied."
     }
-  ]
+  ],
+  "privacy_note": "Some external photos were removed for privacy. Original supplied-image counts describe the historical record, not the remaining published images."
 }

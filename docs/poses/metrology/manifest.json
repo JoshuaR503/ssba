@@ -15,7 +15,8 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1007.JPG",
-          "copy": "01_start_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Arm upright, empty gripper; blue cube rests at Met. No joint-setting screenshot confidently matches this start photo."
@@ -113,7 +114,8 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1014.jpg",
-          "copy": "05_lift_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Blue cube is visibly held higher above the empty Met outline. No separate screenshot provides the exact pre-turn lift setting."
@@ -139,7 +141,8 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1016.jpg",
-          "copy": "06_turn_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Blue cube remains held above the tray at left. Compared with pickup, both shoulder ID5 and base ID6 have changed; intermediate timing/order is not shown."
@@ -165,11 +168,13 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1018.jpg",
-          "copy": "07_lower_tray_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         },
         {
           "source": "/Users/joshua/Downloads/IMG_1019.jpg",
-          "copy": "07_lower_tray_robot_02.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "1018 shows cube held low over the tray; 1019 shows it farther down, apparently at the tray surface. Preserve both views; no extra control setting establishes an additional lower pose."
@@ -195,10 +200,12 @@
       "photos": [
         {
           "source": "/Users/joshua/Downloads/IMG_1021.jpg",
-          "copy": "08_release_robot_01.jpg"
+          "copy": null,
+          "privacy_note": "Picture removed for privacy because private messages were visible in the background. The stage description and recorded servo settings remain available."
         }
       ],
       "observation": "Gripper is open and blue cube is visible in the tray beside the green cube. No subsequent empty-arm return is supplied."
     }
-  ]
+  ],
+  "privacy_note": "Some external photos were removed for privacy. Original supplied-image counts describe the historical record, not the remaining published images."
 }

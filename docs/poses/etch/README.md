@@ -1,8 +1,10 @@
 # Etch — sorted photo and position record
 
-**Red cube at the Etch station.** All 19 supplied images are included: seven control screenshots and twelve robot photos. Originals are unchanged; ordered viewing copies are stored beside this file.
+**Red cube at the Etch station.** The original record contained 19 supplied images: seven control screenshots and twelve robot photos. Original files outside the repository are unchanged. Some viewing copies were removed for privacy; the remaining copies are stored beside this file.
 
 Screenshot/photo pairings are inferred from filenames, visible poses, and joint changes. Displayed settings are transcribed observations, not measured joint feedback.
+
+**Privacy update:** Pictures containing private messages have been removed. Stage descriptions and numerical settings remain available.
 
 ## Ordered positions
 
@@ -19,24 +21,24 @@ Screenshot/photo pairings are inferred from filenames, visible poses, and joint 
 ## Filename inventory
 
 - [IMG_1022.HEIC](/Users/joshua/Downloads/IMG_1022.HEIC) — stage 1: Base/start reference.
-- [IMG_1023.jpg](/Users/joshua/Downloads/IMG_1023.jpg) — stage 1: Base/start reference.
+- IMG_1023.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1024.HEIC](/Users/joshua/Downloads/IMG_1024.HEIC) — stage 2: Open approach to red cube.
-- [IMG_1025.jpg](/Users/joshua/Downloads/IMG_1025.jpg) — stage 2: Open approach to red cube.
-- [IMG_1026.jpg](/Users/joshua/Downloads/IMG_1026.jpg) — stage 2: Open approach to red cube.
+- IMG_1025.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1026.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1027.HEIC](/Users/joshua/Downloads/IMG_1027.HEIC) — stage 3: Grip red cube.
-- [IMG_1028.jpg](/Users/joshua/Downloads/IMG_1028.jpg) — stage 3: Grip red cube.
-- [IMG_1029.jpg](/Users/joshua/Downloads/IMG_1029.jpg) — stage 3: Grip red cube.
+- IMG_1028.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1029.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1030.HEIC](/Users/joshua/Downloads/IMG_1030.HEIC) — stage 4: Lift red cube.
-- [IMG_1031.jpg](/Users/joshua/Downloads/IMG_1031.jpg) — stage 4: Lift red cube.
-- [IMG_1032.jpg](/Users/joshua/Downloads/IMG_1032.jpg) — stage 4: Lift red cube.
+- IMG_1031.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1032.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1033.HEIC](/Users/joshua/Downloads/IMG_1033.HEIC) — stage 5: Turn held cube toward tray.
-- [IMG_1034.jpg](/Users/joshua/Downloads/IMG_1034.jpg) — stage 5: Turn held cube toward tray.
+- IMG_1034.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1035.HEIC](/Users/joshua/Downloads/IMG_1035.HEIC) — stage 6: Lower held cube over tray.
-- [IMG_1036.jpg](/Users/joshua/Downloads/IMG_1036.jpg) — stage 6: Lower held cube over tray.
-- [IMG_1037.jpg](/Users/joshua/Downloads/IMG_1037.jpg) — stage 6: Lower held cube over tray.
+- IMG_1036.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1037.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1038.HEIC](/Users/joshua/Downloads/IMG_1038.HEIC) — stage 7: Release red cube in tray.
-- [IMG_1039.jpg](/Users/joshua/Downloads/IMG_1039.jpg) — stage 7: Release red cube in tray.
-- [IMG_1040.jpg](/Users/joshua/Downloads/IMG_1040.jpg) — stage 7: Release red cube in tray.
+- IMG_1039.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1040.jpg — picture removed for privacy; see the stage description and settings.
 
 ## Paired visual evidence
 
@@ -46,17 +48,17 @@ Upright arm with empty gripper; red cube rests at Etch.
 
 ![IMG_1022.HEIC](01_start_controls_01.jpg)
 
-![IMG_1023.jpg](01_start_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 02 — Open approach to red cube
 
-Open fingers approach the red cube on the cardboard. Both external views are retained.
+Open fingers approach the red cube on the cardboard. External views containing private messages have been removed.
 
 ![IMG_1024.HEIC](02_approach_controls_01.jpg)
 
-![IMG_1025.jpg](02_approach_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1026.jpg](02_approach_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 03 — Grip red cube
 
@@ -64,9 +66,9 @@ Fingers close around the red cube at the surface. ID3 and ID5 also change from t
 
 ![IMG_1027.HEIC](03_grip_controls_01.jpg)
 
-![IMG_1028.jpg](03_grip_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1029.jpg](03_grip_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 04 — Lift red cube
 
@@ -74,9 +76,9 @@ Red cube is visibly suspended above its empty Etch outline.
 
 ![IMG_1030.HEIC](04_lift_controls_01.jpg)
 
-![IMG_1031.jpg](04_lift_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1032.jpg](04_lift_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 05 — Turn held cube toward tray
 
@@ -84,7 +86,7 @@ Red cube remains held while the arm turns toward the tray.
 
 ![IMG_1033.HEIC](05_turn_controls_01.jpg)
 
-![IMG_1034.jpg](05_turn_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 06 — Lower held cube over tray
 
@@ -92,9 +94,9 @@ Red cube is held low over the tray containing green and blue cubes. Exact suppor
 
 ![IMG_1035.HEIC](06_lower_tray_controls_01.jpg)
 
-![IMG_1036.jpg](06_lower_tray_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1037.jpg](06_lower_tray_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 07 — Release red cube in tray
 
@@ -102,9 +104,9 @@ Open fingers and red cube resting above the green/blue cubes are visible; 1040 p
 
 ![IMG_1038.HEIC](07_release_controls_01.jpg)
 
-![IMG_1039.jpg](07_release_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1040.jpg](07_release_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ## Record boundaries
 

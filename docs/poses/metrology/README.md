@@ -1,8 +1,10 @@
 # Metrology — sorted photo and position record
 
-**Blue/cyan cube at the Met station.** Organized in the same format as the deposition record. All 15 supplied files are included: seven control screenshots and eight robot photos. Originals are unchanged; ordered viewing copies are stored beside this file.
+**Blue/cyan cube at the Met station.** Organized in the same format as the deposition record. The original record contained 15 supplied files: seven control screenshots and eight robot photos. Original files outside the repository are unchanged. Some viewing copies were removed for privacy; the remaining copies are stored beside this file.
 
 Logical order is inferred from the cube position, gripper state, joint changes, and filenames. Screenshot/photo associations are likely matches, not independently synchronized measurements. Missing control values remain missing.
+
+**Privacy update:** Pictures containing private messages have been removed. Stage descriptions and numerical settings remain available.
 
 ## Ordered positions
 
@@ -27,21 +29,21 @@ Start photo → Open approach → Lower/open → Grip → Lift photo
 
 ## Filename inventory
 
-- [IMG_1007.JPG](/Users/joshua/Downloads/IMG_1007.JPG) — stage 1: Start/reference photo.
+- IMG_1007.JPG — picture removed for privacy; see the stage description and settings.
 - [IMG_1008.HEIC](/Users/joshua/Downloads/IMG_1008.HEIC) — stage 2: Open approach above metrology.
 - [IMG_1009.HEIC](/Users/joshua/Downloads/IMG_1009.HEIC) — stage 3: Lower/open at cube.
 - [IMG_1010.jpg](/Users/joshua/Downloads/IMG_1010.jpg) — stage 3: Lower/open at cube.
 - [IMG_1011.HEIC](/Users/joshua/Downloads/IMG_1011.HEIC) — stage 3: Lower/open at cube.
 - [IMG_1012.HEIC](/Users/joshua/Downloads/IMG_1012.HEIC) — stage 4: Grip blue cube.
 - [IMG_1013.jpg](/Users/joshua/Downloads/IMG_1013.jpg) — stage 4: Grip blue cube.
-- [IMG_1014.jpg](/Users/joshua/Downloads/IMG_1014.jpg) — stage 5: Raised cube — photo only.
+- IMG_1014.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1015.HEIC](/Users/joshua/Downloads/IMG_1015.HEIC) — stage 6: Turn held cube toward tray.
-- [IMG_1016.jpg](/Users/joshua/Downloads/IMG_1016.jpg) — stage 6: Turn held cube toward tray.
+- IMG_1016.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1017.HEIC](/Users/joshua/Downloads/IMG_1017.HEIC) — stage 7: Lower held cube into tray.
-- [IMG_1018.jpg](/Users/joshua/Downloads/IMG_1018.jpg) — stage 7: Lower held cube into tray.
-- [IMG_1019.jpg](/Users/joshua/Downloads/IMG_1019.jpg) — stage 7: Lower held cube into tray.
+- IMG_1018.jpg — picture removed for privacy; see the stage description and settings.
+- IMG_1019.jpg — picture removed for privacy; see the stage description and settings.
 - [IMG_1020.HEIC](/Users/joshua/Downloads/IMG_1020.HEIC) — stage 8: Release blue cube in tray.
-- [IMG_1021.jpg](/Users/joshua/Downloads/IMG_1021.jpg) — stage 8: Release blue cube in tray.
+- IMG_1021.jpg — picture removed for privacy; see the stage description and settings.
 
 ## Paired visual evidence
 
@@ -49,7 +51,7 @@ Start photo → Open approach → Lower/open → Grip → Lift photo
 
 Arm upright, empty gripper; blue cube rests at Met. No joint-setting screenshot confidently matches this start photo.
 
-![IMG_1007.JPG: robot position](01_start_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 02 — Open approach above metrology
 
@@ -79,7 +81,7 @@ Fingers contact opposite sides of blue cube. Photo shows cube tilted and apparen
 
 Blue cube is visibly held higher above the empty Met outline. No separate screenshot provides the exact pre-turn lift setting.
 
-![IMG_1014.jpg: robot position](05_lift_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 06 — Turn held cube toward tray
 
@@ -87,7 +89,7 @@ Blue cube remains held above the tray at left. Compared with pickup, both should
 
 ![IMG_1015.HEIC: displayed controls](06_turn_controls_01.jpg)
 
-![IMG_1016.jpg: robot position](06_turn_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 07 — Lower held cube into tray
 
@@ -95,9 +97,9 @@ Blue cube remains held above the tray at left. Compared with pickup, both should
 
 ![IMG_1017.HEIC: displayed controls](07_lower_tray_controls_01.jpg)
 
-![IMG_1018.jpg: robot position](07_lower_tray_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
-![IMG_1019.jpg: robot position](07_lower_tray_robot_02.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ### 08 — Release blue cube in tray
 
@@ -105,7 +107,7 @@ Gripper is open and blue cube is visible in the tray beside the green cube. No s
 
 ![IMG_1020.HEIC: displayed controls](08_release_controls_01.jpg)
 
-![IMG_1021.jpg: robot position](08_release_robot_01.jpg)
+*Picture removed for privacy. The pose is described above; recorded servo settings are retained.*
 
 ## Important distinctions
 

@@ -5,6 +5,8 @@ scikit-learn, joblib, and Gunicorn.
 This scaffold separates scheduling, communication, robot control, and CPU telemetry.
 No application or robot movement is started by installation or by importing modules.
 
+Documentation: [index and backup scope](docs/README.md) · [beginner AI prompt](docs/beginner_robot_prompt.md) · [project report](docs/comprehensive_project_report.md).
+
 ## Working physical pickup — 2026-10-17
 
 The operator reported the calibrated non-LLM transfer and corrected AI image-check version worked. Current commands run from the Mac against the Pi vendor service:
